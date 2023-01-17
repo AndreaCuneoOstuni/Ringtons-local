@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("https://cdn.shopify.com/s/files/1/0687/4323/3847/files/Gotham-Book.woff?v=1672845688") format("woff");
+}
+
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("https://cdn.shopify.com/s/files/1/0687/4323/3847/files/Gotham-Medium.woff?v=1672846480") format("woff");
+}
+
+@font-face {
+  font-family: "Tiempos-Headline-Regular";
+  src: url("https://cdn.shopify.com/s/files/1/0687/4323/3847/files/TiemposHeadline-Regular.woff?v=1672847019") format("woff");
+}
+
+body {
+	font-size: 1.2rem;
+}
+
+body p{
+  font-family: "Gotham-Book";
+}
+
+.header__heading-logo {
+	height: auto;
+	width: 96px;
+}
+
+.header__menu-item span {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0.135em;
+  color: #303030;
+}
+
+.header__menu-item {
+	padding: 1.2rem 2rem;
+}
+
+div#trustpilot-widget-trustbox-0-wrapper {
+  padding: 4rem 0;
+}
+
+#tp-widget-wrapper div#tp-widget-logo,
+#tp-widget-wrapper .tp-widget-stars {
+	margin: 0 auto 8px!important;
+}
+
+div#trustpilot-widget-trustbox-0-wrapper #reviews-summary {
+	margin: 0 auto!important;
+}
+
+@media screen and (min-width: 750px) {
+	body {
+		font-size: 1.4rem;
+	}
+	.header__heading-logo {
+		width: 148px;
+	}
+	h3, .h3 {
+    font-size: calc(var(--font-heading-scale) * 1.539rem);
+  }
+	div.multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--third-width {
+    width: 35%;
+	}
+
+	.section-template--17171792494903__multicolumn-padding {
+    padding: 36px 120px 0px 120px;
+	}
+}
+
+@media screen and (min-width: 460px) {
+  .only-mobile-br{
+    display: none;
+  }
+}

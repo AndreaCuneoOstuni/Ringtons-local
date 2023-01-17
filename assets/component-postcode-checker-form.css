@@ -1,0 +1,459 @@
+/* Style the form */
+#PostcodeChecker {
+  background-color: #ffffff;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+
+#PostcodeChecker h1 {
+  font-weight: 700;
+  font-size: 18.55px;
+  line-height: 42px;
+}
+
+#PostcodeChecker h3 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pcc-form__input-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+p.pcc-form__input {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.pcc-form__instructions {
+  margin-top: 0px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.pcc-form__instructions a {
+  color: inherit;
+}
+
+#PostcodeChecker input, #PostcodeChecker select {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Customize the label (the container) */
+.pcc-form__checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 12px;
+  text-align: left;
+  cursor: pointer;
+  /* font-size: 14px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+/* Hide the browser's default checkbox */
+.pcc-form__checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.pcc-form__checkmark {
+  position: absolute;
+  top: 0.7rem;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #B0B0B0;
+}
+
+/* On mouse-over, add a grey background color */
+.pcc-form__checkbox-label:hover input ~ .pcc-form__checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.pcc-form__checkbox-label input:checked ~ .pcc-form__checkmark {
+  background-color: #000;
+}
+
+/* Create the pcc-form__checkmark/indicator (hidden when not checked) */
+.pcc-form__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the pcc-form__checkmark when checked */
+.pcc-form__checkbox-label input:checked ~ .pcc-form__checkmark:after {
+  display: block;
+}
+
+/* Style the pcc-form__checkmark/indicator */
+.pcc-form__checkbox-label .pcc-form__checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.pcc-form__text-one-column--with-checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.pcc-form__text-two-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pcc-form__text-two-columns input {
+  width: 48.5%;
+}
+
+.pcc-form__text-two-columns input[type='checkbox'] {
+  height: 18px;
+  margin-right: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Style the input fields */
+#PostcodeChecker input, #PostcodeChecker select {
+  padding: 10px 19px;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #B0B0B0;
+  color: #000;
+  font-family: "Gotham-Book";
+}
+
+#PostcodeChecker input:not(.postcode-lookup_input), #PostcodeChecker select {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Mark input boxes that gets an error on validation: */
+#PostcodeChecker input.invalid {
+  background-color: #ffdddd;
+}
+
+#PostcodeChecker select.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.pcc-form__tab {
+  display: none;
+}
+
+
+
+/* Make circles that indicate the steps of the form: */
+.pcc-form__step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: white;
+  border: 1px solid #CEBE7B;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 1;
+}
+
+/* Mark the active step: */
+.pcc-form__step.active {
+  opacity: 1;
+  background-color: #CEBE7B;
+  border: none;
+}
+
+.pcc-form__step.inactive {
+  opacity: 1;
+  background-color: white;
+  border: 1px solid #CEBE7B;
+}
+
+/* Mark the steps that are finished and valid: */
+.pcc-form__step.finish {
+  background-color: #CEBE7B;
+}
+
+.pcc-form__wrapper {
+  padding-right: calc(5rem / var(--font-body-scale));
+  padding-left: calc(5rem / var(--font-body-scale));
+}
+
+.pcc-form__button-container {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.one-btn {
+  justify-content: center;
+}
+
+.two-btns {
+  justify-content: space-between;
+}
+
+.pcc-form__button-prev, .pcc-form__button-next {
+  width: 132px;
+  height: 38.11px;
+  background: #CEBE7B;
+  border: none;
+  border-radius: 10.8197px;
+}
+
+.pcc-form__wrapper > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pcc-form__wrapper > * + * {
+  margin-top: 2rem;
+}
+
+/* Ideas Postcode checker */
+
+.pcc-form__postcode-lookup {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.pcc-form__postcode-lookup>.postcode-lookup_input {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+
+.postcode-lookup_input {
+  display: block;
+  color: #757575;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-top: 1px solid #B0B0B0;
+  border-bottom: 1px solid #B0B0B0;
+  border-left: 1px solid #B0B0B0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+select#getaddress_dropdown {
+  padding: 10px 19px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #B0B0B0;;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  color: #000;
+}
+
+#getaddress_button {
+  border-top: 1px solid #B0B0B0;
+  border-bottom: 1px solid #B0B0B0;
+  border-right: 1px solid #B0B0B0;
+  border-left: none;
+  font-family: inherit;
+  background-color: #CEBE7B;
+  padding: 0.475rem 2.25rem;
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0px!important;
+  border-bottom-left-radius: 0px!important;
+  position: relative;
+  z-index: 2;
+}
+
+#getaddress_button:not(:disabled), [type=button]:not(:disabled) {
+  cursor: pointer;
+}
+
+#getaddress_button>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* End Ideas */
+
+
+@media screen and (min-width: 750px) {
+  .pcc-form__wrapper {
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+  #PostcodeChecker h1 {
+    font-size: 35px;
+    line-height: 42px;
+    margin-bottom: 3rem;
+  }
+  .pcc-form__tab p {
+    margin-bottom: 2rem;
+  }
+  .pcc-form__checkbox-label {
+    padding-left: 4rem;
+  }
+  .pcc-form__input.pcc-form__input--two-cols {
+    width: 48.5%;
+  }
+  .pcc-form__input-container {
+    justify-content: space-between;
+  }
+  .one-btn {
+    justify-content: right;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  #PostcodeChecker h1 {
+    margin-bottom: 3.5rem;
+  }
+  .pcc-form__tab p {
+    margin-bottom: 0.5rem;
+  }
+
+  .pcc-form__tab {
+    margin: 0px 100px;
+  }
+}
+
+/* late edits Jan 4th 2023 */
+legend{
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+}
+.pcc-form__checkbox-label{
+  line-height: 24px;
+}
+
+.info-checkbox, .info-checkbox label {
+    margin-bottom: 0px !important;
+}
+
+@media screen and (min-width: 750px) {
+.pcc-form__checkbox-label{
+  line-height: 20px;
+}
+}
+
+#
+
+/*T&C text style*/
+.terms-conditions-text{
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 18px;
+  color: #626262;
+  margin: 30px 0px;
+  padding: 0px 90px;
+}
+
+@media screen and (min-width: 460px) and (max-width: 768px) {
+  .terms-conditions-text{
+    padding: 0px 40px;
+    margin: 25px 0px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .terms-conditions-text{
+    padding: 0px 0px;
+    margin: 25px 0px;
+  }
+}
+
+/*Form placeholder text style*/
+#PostcodeChecker input::placeholder {
+  font-family: "Gotham-Book";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+}
+
+#PostcodeChecker input::-webkit-input-placeholder {
+  font-family: "Gotham-Book";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+}
+
+#PostcodeChecker input:-ms-input-placeholder {
+  font-family: "Gotham-Book";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+}
+
+#PostcodeChecker input:-moz-placeholder {
+  font-family: "Gotham-Book";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+}
+
+#PostcodeChecker input::-moz-placeholder {
+  font-family: "Gotham-Book";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+}
+
+@media screen and (max-width: 460px) {
+  .pcc-form__checkbox-label {
+    font-size: 12.44px;
+    line-height: 18px;
+  }
+
+  .pcc-form__instructions{
+    font-size: 12.44px;
+    line-height: 18px;
+  }
+
+  #PostcodeChecker h3 {
+    font-size: 12.44px;
+    line-height: 18px;
+  }
+}

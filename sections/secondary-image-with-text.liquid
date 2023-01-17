@@ -1,0 +1,335 @@
+{{ 'component-secondary-image-with-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="secondary-image-with-text secondary-image-with-text--no-overlap isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
+
+<div class="{% if section.blocks.size == 1 %} secondary-image-with-text__grid-image-and-title {% else %} secondary-image-with-text__grid-image-and-text  {% endif %} {% if section.settings.layout == 'text_first' %} secondary-image-with-text__grid--reverse{% endif %}">
+
+      <div class="secondary-image-with-text__media {% if section.settings.image != blank %}{% else %}secondary-image-with-text__media--placeholder placeholder{% endif %}">
+        {%- if section.settings.image != blank -%}
+          {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+          {{ section.settings.image | image_url: width: 1500 | image_tag:
+            loading: 'lazy',
+            sizes: sizes,
+            widths: '165, 360, 535, 750, 1070, 1500'
+          }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+     </div>
+
+    <div class="{% if section.blocks.size == 1 %} secondary-image-with-text__content-header-only {% else %} secondary-image-with-text__content-header  {% endif %} secondary-image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} secondary-image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} gradient color-{{ section.settings.color_scheme }} content-container">
+
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'heading' -%}
+              <h2 class="secondary-image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }} style="text-transform:{{ block.settings.header_capitalization }};">
+                {{ block.settings.heading | escape }}
+              </h2>
+            {%- endcase -%}
+        {%- endfor -%}
+        <span class="secondary-image-with-text__divider"></span>
+    </div>
+
+    <script>
+      console.log('{{ section.blocks.size }}');
+      console.log('{{ section.blocks[3].type }}');
+    </script>
+    {% if section.blocks.size > 1 %}
+      <div class="secondary-image-with-text__content-body secondary-image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} secondary-image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} gradient color-{{ section.settings.color_scheme }} content-container">
+
+          {%- for block in section.blocks -%}
+            {% case block.type %}
+
+              {%- when 'pre-text' -%}
+                <h4 class="secondary-image-with-text__pre-text {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                  {{ block.settings.pre-text | escape }}
+                </h4>
+              {%- when 'text' -%}
+                    <div class="secondary-image-with-text__text {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+              {%- when 'sub-text' -%}
+                <h4 class="secondary-image-with-text__sub-text {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                  {{ block.settings.sub-text }}
+                </h4>
+
+              {%- endcase -%}
+
+          {%- endfor -%}
+
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Secondary Image With Text",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Image second"
+        }
+      ],
+      "default": "image_first",
+      "label": "Desktop image placement",
+      "info": "Image first is the default mobile layout."
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Desktop content alignment"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Mobile content alignment"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Secondary Image with text",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Small"
+            },
+            {
+              "value": "h1",
+              "label": "Medium"
+            },
+            {
+              "value": "h0",
+              "label": "Large"
+            }
+          ],
+          "default": "h1",
+          "label": "Medium"
+        },
+        {
+          "type": "select",
+          "id": "header_capitalization",
+          "options": [
+            {
+              "value": "capitalize",
+              "label": "Capitalize"
+            },
+            {
+              "value": "uppercase",
+              "label": "All Uppercase"
+            },
+            {
+              "value": "lowercase",
+              "label": "All lowercase"
+            },
+            {
+              "value": "none",
+              "label": "As provided in text"
+            }
+          ],
+          "default": "none",
+          "label": "Header Capitalization"
+        }
+      ]
+    },
+    {
+      "type": "pre-text",
+      "name": "text above heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "pre-text",
+          "default": "Text above content",
+          "label": "Text above content"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "html",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Content"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            }
+          ],
+          "default": "body",
+          "label": "Text style"
+        }
+      ]
+    },
+    {
+      "type": "sub-text",
+      "name": "Content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "sub-text",
+          "default": "<p>Additional text</p>",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Secondary Image With Text",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "pre-text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "sub-text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
