@@ -39,6 +39,8 @@
               <h2 class="secondary-image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }} style="text-transform:{{ block.settings.header_capitalization }};">
                 {{ block.settings.heading | escape }}
               </h2>
+            {%- when 'sub-header' -%}
+              <div class="secondary-image-with-text__sub-header" {{ block.shopify_attributes }}>{{ block.settings.sub-header }}</div>
             {%- endcase -%}
         {%- endfor -%}
         <span class="secondary-image-with-text__divider"></span>
@@ -253,6 +255,19 @@
           ],
           "default": "none",
           "label": "Header Capitalization"
+        }
+      ]
+    },
+    {
+      "type": "sub-header",
+      "name": "Text below title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "html",
+          "id": "sub-header",
+          "default": "<p>Additional text</p>",
+          "label": "Text below title"
         }
       ]
     },

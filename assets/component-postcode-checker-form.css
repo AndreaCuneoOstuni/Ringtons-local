@@ -228,6 +228,7 @@ p.pcc-form__input {
   background: #CEBE7B;
   border: none;
   border-radius: 10.8197px;
+  color: black;
 }
 
 .pcc-form__wrapper > * {
@@ -337,7 +338,7 @@ select#getaddress_dropdown {
     justify-content: space-between;
   }
   .one-btn {
-    justify-content: right;
+    justify-content: flex-end;
   }
 }
 

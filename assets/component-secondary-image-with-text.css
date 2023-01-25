@@ -270,7 +270,15 @@ secondary-h-text__content {
   margin: 0;
 }
 
-.secondary-image-with-text__text p {
+.secondary-image-with-text__sub-header {
+  padding: 0 3rem;  
+}
+
+.secondary-image-with-text__sub-header p {
+  color: #000; 
+}
+
+.secondary-image-with-text__sub-header p, .secondary-image-with-text__text p {
   font-family: Gotham-Book;
   word-break: break-word;
   margin-top: 0;
@@ -288,7 +296,7 @@ secondary-h-text__content {
     font-size: calc(var(--font-heading-scale) * 4rem);
     line-height: calc(var(--font-heading-scale) * 3.5rem);
   }
-  .secondary-image-with-text__text p {
+  .secondary-image-with-text__sub-header p, .secondary-image-with-text__text p {
     font-size: 1.5rem;
   }
 }
@@ -309,6 +317,13 @@ secondary-h-text__content {
     font-size: calc(var(--font-heading-scale) * 2rem);
     line-height: calc(var(--font-heading-scale) * 2rem);
   }
+  .secondary-image-with-text__sub-header {
+    padding: 0;  
+  }
+  .secondary-image-with-text__sub-header p {
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+  }
   .secondary-image-with-text__text p {
     font-size: 1rem;
     margin-bottom: 0;
@@ -323,7 +338,7 @@ secondary-h-text__content {
     font-size: calc(var(--font-heading-scale) * 3rem);
     line-height: calc(var(--font-heading-scale) * 2.5rem);
   }
-  .secondary-image-with-text__text p {
+  .secondary-image-with-text__sub-header p, .secondary-image-with-text__text p {
     font-size: 1.1rem;
     margin: 1rem 0;
   }
@@ -337,6 +352,10 @@ secondary-h-text__content {
     font-size: calc(var(--font-heading-scale) * 4rem);
     line-height: calc(var(--font-heading-scale) * 3.5rem);
   }
+  .secondary-image-with-text__sub-header p {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
   .secondary-image-with-text__text p {
     font-size: 1.4rem;
     margin: 0.2rem 0;
@@ -347,13 +366,15 @@ secondary-h-text__content {
   .secondary-image-with-text__grid {
     padding: 0 86px;
   }
-
   .secondary-image-with-text__pre-heading, .secondary-image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1.4rem);
   }
   .secondary-image-with-text__heading {
     font-size: calc(var(--font-heading-scale) * 4rem);
     line-height: calc(var(--font-heading-scale) * 3.5rem);
+  }
+  .secondary-image-with-text__sub-header p {
+    font-size: 1.4rem;
   }
   .secondary-image-with-text__text p {
     font-size: 1.4rem;
