@@ -223,7 +223,7 @@ p.pcc-form__input {
 }
 
 .pcc-form__button-prev, .pcc-form__button-next {
-  width: 132px;
+  width: 43%; /*width: 132px;*/
   height: 38.11px;
   background: #CEBE7B;
   border: none;
@@ -277,7 +277,7 @@ select#getaddress_dropdown {
   width: 100%;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid #B0B0B0;;
+  border: 1px solid #B0B0B0;
   margin-top: 1.5rem;
   border-radius: 10px;
   color: #000;
@@ -314,6 +314,11 @@ select#getaddress_dropdown {
 }
 /* End Ideas */
 
+@media screen and (min-width: 400px) {
+  .pcc-form__button-prev, .pcc-form__button-next {
+    width: 132px;
+  }
+}
 
 @media screen and (min-width: 750px) {
   .pcc-form__wrapper {

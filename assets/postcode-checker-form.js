@@ -76,7 +76,7 @@ function nextPrev(n) {
         document.getElementById("postcode").value = userPostcode.value;
       } else {
         console.log("Not in area", userData);
-        sendUserData(userData, "Not_In_The_Area");
+        // sendUserData(userData, "Not_In_The_Area");
         document.querySelector("#PostcodeChecker").action ="/pages/thank-you/";
         //document.getElementById("PostcodeChecker").submit();
       }
@@ -86,7 +86,7 @@ function nextPrev(n) {
       if (clientStatusField.value == "existing-client") {
         console.log("PPCSecondStep value", clientStatusField.value);
         console.log("Existing customer", userData);
-        sendUserData(userData, "Existing_customer");
+        // sendUserData(userData, "Existing_customer");
         document.querySelector("#PostcodeChecker").action =
           "https://www.ringtons.co.uk/get-in-touch-i99";
         //document.getElementById("PostcodeChecker").submit();
@@ -94,7 +94,7 @@ function nextPrev(n) {
     }
     console.log("Raw Data", userData);
     //sending current data to raw data tab
-    sendUserData(userData, "Raw_data");
+    // sendUserData(userData, "Raw_data");
   }
 
   if(n == -1){
@@ -110,7 +110,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    sendUserData(userData, "New_Leads");
+    // sendUserData(userData, "New_Leads");
     document.querySelector("#PostcodeChecker").action =
       "/pages/well-be-in-touch";
     //document.getElementById("PostcodeChecker").submit();
@@ -239,7 +239,7 @@ function validateForm(ID) {
           postcode.value.replace(/\s/g, "").length < 4 ||
           postcode.value.replace(/\s/g, "").length > 8
         ) {
-          
+
               // document.getElementById("PostcodeChecker").style.opacity = "100";
         validValuesArr.push("0");
         postcode.className += " invalid";
@@ -289,7 +289,7 @@ function validateForm(ID) {
       userData.activeClient = clientStatus.value;
       //trying to get the redirect done before the next step is shown
       if (clientStatus.value == "existing-client") {
-        sendUserData(userData, "Existing_customer");
+        // sendUserData(userData, "Existing_customer");
        valid = false;
         document.querySelector("#PostcodeChecker").action =
           "https://www.ringtons.co.uk/get-in-touch-i99";
@@ -488,7 +488,7 @@ function sendUserData(data, tabId) {
     .then((result) => {
       if(tabId!="Raw_data")document.getElementById("PostcodeChecker").submit();
     })
-    
+
     .catch((error) => console.log("error", error));
 }
 

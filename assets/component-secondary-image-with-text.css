@@ -213,13 +213,13 @@
   margin-top: 2rem;
 }
 
-.secondary-image-with-text__content > :first-child:is(.secondary-image-with-text__heading),
-.secondary-image-with-text__text--caption + .secondary-image-with-text__heading,
+.secondary-image-with-text__content > :first-child:is(.secondary-image-with-text__title),
+.secondary-image-with-text__text--caption + .secondary-image-with-text__title,
 .secondary-image-with-text__text--caption:first-child {
   margin-top: 0;
 }
 
-.secondary-image-with-text__content :last-child:is(.secondary-image-with-text__heading),
+.secondary-image-with-text__content :last-child:is(.secondary-image-with-text__title),
 .secondary-image-with-text__text--caption {
   margin-bottom: 0;
 }
@@ -242,7 +242,7 @@ secondary-h-text__content {
   font-size: calc(var(--font-heading-scale) * 1.2rem);
 }
 
-.secondary-image-with-text__heading {
+.secondary-image-with-text__title {
   font-size: calc(var(--font-heading-scale) * 3rem);
   line-height: calc(var(--font-heading-scale) * 2.6rem);
   word-break: break-word;
@@ -250,7 +250,7 @@ secondary-h-text__content {
   color: #CEBE7B;
 }
 
-.secondary-image-with-text__pre-heading, .secondary-image-with-text__heading, .secondary-image-with-text__subheading  {
+.secondary-image-with-text__pre-heading, .secondary-image-with-text__title, .secondary-image-with-text__subheading  {
   font-family: "Tiempos-Headline-Regular";
   margin: 0;
 }
@@ -270,15 +270,15 @@ secondary-h-text__content {
   margin: 0;
 }
 
-.secondary-image-with-text__sub-header {
-  padding: 0 3rem;  
+.secondary-image-with-text__sub-title {
+  padding: 0 3rem;
 }
 
-.secondary-image-with-text__sub-header p {
-  color: #000; 
+.secondary-image-with-text__sub-title p {
+  color: #000;
 }
 
-.secondary-image-with-text__sub-header p, .secondary-image-with-text__text p {
+.secondary-image-with-text__sub-title p, .secondary-image-with-text__text p {
   font-family: Gotham-Book;
   word-break: break-word;
   margin-top: 0;
@@ -292,17 +292,17 @@ secondary-h-text__content {
   .secondary-image-with-text__pre-heading, .secondary-image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1.5rem);
   }
-  .secondary-image-with-text__heading {
+  .secondary-image-with-text__title {
     font-size: calc(var(--font-heading-scale) * 4rem);
     line-height: calc(var(--font-heading-scale) * 3.5rem);
   }
-  .secondary-image-with-text__sub-header p, .secondary-image-with-text__text p {
+  .secondary-image-with-text__sub-title p, .secondary-image-with-text__text p {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .secondary-image-with-text__heading {
+  .secondary-image-with-text__title {
       font-size: calc(var(--font-heading-scale) * 5rem);
       line-height: calc(var(--font-heading-scale) * 4.5rem);
   }
@@ -313,14 +313,14 @@ secondary-h-text__content {
   .secondary-image-with-text__pre-heading, .secondary-image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1rem);
   }
-  .secondary-image-with-text__heading {
+  .secondary-image-with-text__title {
     font-size: calc(var(--font-heading-scale) * 2rem);
     line-height: calc(var(--font-heading-scale) * 2rem);
   }
-  .secondary-image-with-text__sub-header {
-    padding: 0;  
+  .secondary-image-with-text__sub-title {
+    padding: 0;
   }
-  .secondary-image-with-text__sub-header p {
+  .secondary-image-with-text__sub-title p {
     font-size: 1rem;
     margin: 0 0 1rem 0;
   }
@@ -334,11 +334,11 @@ secondary-h-text__content {
   .secondary-image-with-text__pre-heading, .secondary-image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1rem);
   }
-  .secondary-image-with-text__heading {
+  .secondary-image-with-text__title {
     font-size: calc(var(--font-heading-scale) * 3rem);
     line-height: calc(var(--font-heading-scale) * 2.5rem);
   }
-  .secondary-image-with-text__sub-header p, .secondary-image-with-text__text p {
+  .secondary-image-with-text__sub-title p, .secondary-image-with-text__text p {
     font-size: 1.1rem;
     margin: 1rem 0;
   }
@@ -348,17 +348,16 @@ secondary-h-text__content {
   .secondary-image-with-text__pre-heading, .secondary-image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1.4rem);
   }
-  .secondary-image-with-text__heading {
+  .secondary-image-with-text__title {
     font-size: calc(var(--font-heading-scale) * 4rem);
     line-height: calc(var(--font-heading-scale) * 3.5rem);
   }
-  .secondary-image-with-text__sub-header p {
+  .secondary-image-with-text__sub-title p {
     margin-bottom: 2rem;
     font-size: 1.4rem;
   }
   .secondary-image-with-text__text p {
     font-size: 1.4rem;
-    margin: 0.2rem 0;
   }
 }
 
@@ -369,16 +368,16 @@ secondary-h-text__content {
   .secondary-image-with-text__pre-heading, .secondary-image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1.4rem);
   }
-  .secondary-image-with-text__heading {
+  .secondary-image-with-text__title {
     font-size: calc(var(--font-heading-scale) * 4rem);
     line-height: calc(var(--font-heading-scale) * 3.5rem);
   }
-  .secondary-image-with-text__sub-header p {
+  .secondary-image-with-text__sub-title p {
     font-size: 1.4rem;
   }
   .secondary-image-with-text__text p {
     font-size: 1.4rem;
-    margin: 3rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
   }
 
   .secondary-image-with-text__pre-text, .secondary-image-with-text__sub-text {
@@ -421,12 +420,12 @@ secondary-h-text__content {
   grid-area: Image;
 }
 
-.secondary-image-with-text__content-header {
+.secondary-image-with-text__content-title {
   grid-area: Header;
   text-align: center;
 }
 
-.secondary-image-with-text__content-header-only {
+.secondary-image-with-text__content-title-only {
   grid-area: Header;
   text-align: center;
 }
@@ -435,7 +434,7 @@ secondary-h-text__content {
   display: none;
 }
 
-h2.secondary-image-with-text__heading.h1 {
+h2.secondary-image-with-text__title.h1 {
   font-size: 4.5rem;
   line-height: 4rem;
   margin-bottom: 1rem;
@@ -471,7 +470,7 @@ h2.secondary-image-with-text__heading.h1 {
   margin: auto 0;
 }
 @media screen and (max-width: 749px) {
-  h2.secondary-image-with-text__heading.h1 {
+  h2.secondary-image-with-text__title.h1 {
     padding: 0 3rem;
   }
 }
@@ -495,7 +494,7 @@ h2.secondary-image-with-text__heading.h1 {
       "Image Header";
   }
 
-  .secondary-image-with-text__grid-image-and-text {
+  .secondary-image-with-text__grid-image-and-text:not(.secondary-image-with-text__grid--reverse)  {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -505,7 +504,17 @@ h2.secondary-image-with-text__heading.h1 {
       "Image Content";
   }
 
-  .secondary-image-with-text__grid-image-and-text .secondary-image-with-text__content-header {
+  .secondary-image-with-text__grid-image-and-text.secondary-image-with-text__grid--reverse  {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "Header Image"
+      "Header Image"
+      "Content Image"
+      "Content Image";
+  }
+
+  .secondary-image-with-text__grid-image-and-text .secondary-image-with-text__content-title {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -513,30 +522,30 @@ h2.secondary-image-with-text__heading.h1 {
   }
 
 
-  .secondary-image-with-text__grid-image-and-title:not(.secondary-image-with-text__grid--reverse) h2.secondary-image-with-text__heading.h1 {
+  .secondary-image-with-text__grid-image-and-title:not(.secondary-image-with-text__grid--reverse) h2.secondary-image-with-text__title.h1 {
     margin-bottom: 2rem;
     letter-spacing: 0.01rem;
     padding: 0;
   }
 
-  .secondary-image-with-text__grid-image-and-title.secondary-image-with-text__grid--reverse h2.secondary-image-with-text__heading.h1 {
+  .secondary-image-with-text__grid-image-and-title.secondary-image-with-text__grid--reverse h2.secondary-image-with-text__title.h1 {
     margin-bottom: 2rem;
     letter-spacing: .01rem;
     padding: 0;
   }
 
-  .secondary-image-with-text__content-header h2.secondary-image-with-text__heading.h1 {
+  .secondary-image-with-text__content-title h2.secondary-image-with-text__title.h1 {
     padding: 0;
     font-size: 6rem;
     line-height: 5.5rem;
   }
 
-  .secondary-image-with-text__content-header-only h2.secondary-image-with-text__heading.h1 {
+  .secondary-image-with-text__content-title-only h2.secondary-image-with-text__title.h1 {
     font-size: 7rem;
     line-height: 6rem;
   }
 
-  .secondary-image-with-text__content-header .secondary-image-with-text__divider {
+  .secondary-image-with-text__content-title .secondary-image-with-text__divider {
     width: 9%;
     border-bottom: solid 1px #CEBE7B;
     margin: 0;
@@ -547,18 +556,19 @@ h2.secondary-image-with-text__heading.h1 {
     padding: 0;
   }
 
-  .secondary-image-with-text__content-header-only {
+  .secondary-image-with-text__content-title-only {
     align-self: center;
   }
 }
 
 @media screen and (min-width: 1201px) {
-  .secondary-image-with-text__content-header {
+  .secondary-image-with-text__content-title {
     padding-right: 5rem;
   }
 
   .secondary-image-with-text__content-body {
     padding: 0;
+    padding-right: 5rem;
   }
 }
 
