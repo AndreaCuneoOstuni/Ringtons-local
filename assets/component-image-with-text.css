@@ -215,7 +215,7 @@
   }
 
   .image-with-text--overlap .image-with-text__content {
-    height: 84%;
+    height: 90%;
     width: calc(100% + 4rem);
     min-width: calc(100% + 4rem);
     margin-top: 0;
@@ -360,6 +360,15 @@
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 375px) {
+  .image-with-text__heading {
+    font-size: calc(var(--font-heading-scale) * 2.5rem);
+  }
+  .image-with-text__pre-heading, .image-with-text__subheading {
+    font-size: calc(var(--font-heading-scale) * 1rem);
+  }
+}
+
 @media screen and (min-width: 501px) {
   .image-with-text__pre-heading, .image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1.5rem);
@@ -409,7 +418,7 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1040px) {
   .image-with-text__pre-heading, .image-with-text__subheading  {
     font-size: calc(var(--font-heading-scale) * 1.4rem);
   }
