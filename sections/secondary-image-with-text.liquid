@@ -34,7 +34,7 @@
     <div class="{% if section.settings.text == blank %} secondary-image-with-text__content-title-only {% else %} secondary-image-with-text__content-title {% endif %} secondary-image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} secondary-image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} gradient color-{{ section.settings.color_scheme }} content-container">
 
       {% if section.settings.title != blank %}
-        <h2 class="secondary-image-with-text__title {{ section.settings.title_size }}" {{ block.shopify_attributes }} style="text-transform:{{ section.settings.title_capitalization }};">
+        <h2 class="secondary-image-with-text__title h1" {{ block.shopify_attributes }} style="text-transform:{{ section.settings.title_capitalization }};">
           {{ section.settings.title | escape }}
         </h2>
       {% endif %}
@@ -105,26 +105,6 @@
       "type": "text",
       "id": "title",
       "label": "Title"
-    },
-    {
-      "type": "select",
-      "id": "title_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "Small"
-        },
-        {
-          "value": "h1",
-          "label": "Medium"
-        },
-        {
-          "value": "h0",
-          "label": "Large"
-        }
-      ],
-      "default": "h1",
-      "label": "Title Size"
     },
     {
       "type": "select",

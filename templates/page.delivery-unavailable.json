@@ -5,16 +5,15 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Group-153.png",
         "layout": "image_first",
-        "title": "Thank you, we'll be in touch!",
-        "title_size": "h1",
+        "title": "We'll be in touch",
         "title_capitalization": "none",
-        "sub-title": "<p>Our Customer Care team is checking for your nearest available van, packed full of the finest tea and more. We’ll be in touch within the next two working days, look out for a call from 0800 052 2440.<\/p>",
+        "sub-title": "<p>You can also order our <br class=\"only-mobile-br\"> award-winning tea and treats<strong> <\/strong><a href=\"https:\/\/www.ringtons.co.uk\/\" target=\"_blank\" title=\"https:\/\/www.ringtons.co.uk\/\"><strong>online<\/strong><\/a>.<br><br class=\"only-mobile-br\">\nUse the discount code below to <br class=\"only-mobile-br\"> get <strong>20% off your first order!<\/strong><\/p>",
         "pre-text": "What can I do now?",
         "text": "<p>You can also order our <br class=\"only-mobile-br\"> award-winning tea and treats<strong> <\/strong><a href=\"https:\/\/www.ringtons.co.uk\/\" target=\"_blank\" title=\"https:\/\/www.ringtons.co.uk\/\"><strong>online<\/strong><\/a>.<br><br class=\"only-mobile-br\">\nUse the discount code below to <br class=\"only-mobile-br\"> get <strong>20% off your first order!<\/strong><\/p>",
         "sub-text": "<p>USE CODE: <strong>DIS20<\/strong><\/p>",
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "right",
         "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "right",
         "padding_top": 36,
         "padding_bottom": 36
       }

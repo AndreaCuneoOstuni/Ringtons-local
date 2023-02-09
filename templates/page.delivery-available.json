@@ -4,7 +4,7 @@
       "type": "secondary-image-with-text",
       "settings": {
         "image": "shopify:\/\/shop_images\/Group-153.png",
-        "layout": "text_first",
+        "layout": "image_first",
         "title": "We'll be in touch soon!",
         "title_size": "h1",
         "title_capitalization": "none",
