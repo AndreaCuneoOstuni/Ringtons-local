@@ -16,7 +16,7 @@
 
 <div class="secondary-image-with-text secondary-image-with-text--no-overlap isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
 
-<div class="{% if section.blocks.size == 1 %} secondary-image-with-text__grid-image-and-title {% else %} secondary-image-with-text__grid-image-and-text  {% endif %} {% if section.settings.layout == 'text_first' %} secondary-image-with-text__grid--reverse{% endif %}">
+<div class="{% if section.settings.text == blank %} secondary-image-with-text__grid-image-and-title {% else %} secondary-image-with-text__grid-image-and-text {% endif %} {% if section.settings.layout == 'text_first' %} secondary-image-with-text__grid--reverse{% endif %}">
 
       <div class="secondary-image-with-text__media {% if section.settings.image != blank %}{% else %}secondary-image-with-text__media--placeholder placeholder{% endif %}">
         {%- if section.settings.image != blank -%}
@@ -31,48 +31,42 @@
         {%- endif -%}
      </div>
 
-    <div class="{% if section.blocks.size == 1 %} secondary-image-with-text__content-header-only {% else %} secondary-image-with-text__content-header  {% endif %} secondary-image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} secondary-image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} gradient color-{{ section.settings.color_scheme }} content-container">
+    <div class="{% if section.settings.text == blank %} secondary-image-with-text__content-title-only {% else %} secondary-image-with-text__content-title {% endif %} secondary-image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} secondary-image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} gradient color-{{ section.settings.color_scheme }} content-container">
 
-        {%- for block in section.blocks -%}
-          {% case block.type %}
-            {%- when 'heading' -%}
-              <h2 class="secondary-image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }} style="text-transform:{{ block.settings.header_capitalization }};">
-                {{ block.settings.heading | escape }}
-              </h2>
-            {%- when 'sub-header' -%}
-              <div class="secondary-image-with-text__sub-header" {{ block.shopify_attributes }}>{{ block.settings.sub-header }}</div>
-            {%- endcase -%}
-        {%- endfor -%}
-        <span class="secondary-image-with-text__divider"></span>
+      {% if section.settings.title != blank %}
+        <h2 class="secondary-image-with-text__title h1" {{ block.shopify_attributes }} style="text-transform:{{ section.settings.title_capitalization }};">
+          {{ section.settings.title | escape }}
+        </h2>
+      {% endif %}
+      {% if section.settings.sub-title != blank %}
+        <div class="secondary-image-with-text__sub-title">{{ section.settings.sub-title }}</div>
+      {% endif %}
+
+      <span class="secondary-image-with-text__divider"></span>
+
     </div>
 
-    <script>
-      console.log('{{ section.blocks.size }}');
-      console.log('{{ section.blocks[3].type }}');
-    </script>
-    {% if section.blocks.size > 1 %}
+    {% if section.settings.text != blank %}
       <div class="secondary-image-with-text__content-body secondary-image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} secondary-image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} gradient color-{{ section.settings.color_scheme }} content-container">
+        {% if section.settings.pre-text != blank %}
+          <h4 class="secondary-image-with-text__pre-text">
+            {{ section.settings.pre-text }}
+          </h4>
+        {% endif %}
 
-          {%- for block in section.blocks -%}
-            {% case block.type %}
+          <div class="secondary-image-with-text__text">
+            {{ section.settings.text }}
+          </div>
 
-              {%- when 'pre-text' -%}
-                <h4 class="secondary-image-with-text__pre-text {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-                  {{ block.settings.pre-text | escape }}
-                </h4>
-              {%- when 'text' -%}
-                    <div class="secondary-image-with-text__text {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
-              {%- when 'sub-text' -%}
-                <h4 class="secondary-image-with-text__sub-text {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-                  {{ block.settings.sub-text }}
-                </h4>
-
-              {%- endcase -%}
-
-          {%- endfor -%}
+        {% if section.settings.sub-text != blank %}
+          <h4 class="secondary-image-with-text__sub-text">
+            {{ section.settings.sub-text }}
+          </h4>
+        {% endif %}
 
       </div>
-    {%- endif -%}
+    {% endif %}
+
   </div>
 </div>
 
@@ -102,6 +96,69 @@
       "default": "image_first",
       "label": "Desktop image placement",
       "info": "Image first is the default mobile layout."
+    },
+    {
+      "type": "header",
+      "content": "Banner Header Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "title_capitalization",
+      "options": [
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        },
+        {
+          "value": "uppercase",
+          "label": "All Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "All lowercase"
+        },
+        {
+          "value": "none",
+          "label": "As provided in text"
+        }
+      ],
+      "default": "none",
+      "label": "Title Capitalization"
+    },
+    {
+      "type": "html",
+      "id": "sub-title",
+      "label": "Text Below Title"
+    },
+    {
+      "type": "header",
+      "content": "Banner Body Content"
+    },
+    {
+      "type": "text",
+      "id": "pre-text",
+      "label": "Text Above Content",
+      "info": "Requires the 'Main content' field to fe filled."
+    },
+    {
+      "type": "html",
+      "id": "text",
+      "label": "Main Content"
+    },
+    {
+      "type": "richtext",
+      "id": "sub-text",
+      "label": "Text Below Content",
+      "info": "Requires the 'Main content' field to fe filled."
+    },
+    {
+      "type": "header",
+      "content": "Banner Content Alignment"
     },
     {
       "type": "select",
@@ -198,152 +255,6 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 36
-    }
-  ],
-  "blocks": [
-    {
-      "type": "heading",
-      "name": "Heading",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Secondary Image with text",
-          "label": "Heading"
-        },
-        {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h2",
-              "label": "Small"
-            },
-            {
-              "value": "h1",
-              "label": "Medium"
-            },
-            {
-              "value": "h0",
-              "label": "Large"
-            }
-          ],
-          "default": "h1",
-          "label": "Medium"
-        },
-        {
-          "type": "select",
-          "id": "header_capitalization",
-          "options": [
-            {
-              "value": "capitalize",
-              "label": "Capitalize"
-            },
-            {
-              "value": "uppercase",
-              "label": "All Uppercase"
-            },
-            {
-              "value": "lowercase",
-              "label": "All lowercase"
-            },
-            {
-              "value": "none",
-              "label": "As provided in text"
-            }
-          ],
-          "default": "none",
-          "label": "Header Capitalization"
-        }
-      ]
-    },
-    {
-      "type": "sub-header",
-      "name": "Text below title",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "html",
-          "id": "sub-header",
-          "default": "<p>Additional text</p>",
-          "label": "Text below title"
-        }
-      ]
-    },
-    {
-      "type": "pre-text",
-      "name": "text above heading",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "pre-text",
-          "default": "Text above content",
-          "label": "Text above content"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "name": "Text",
-      "limit": 2,
-      "settings": [
-        {
-          "type": "html",
-          "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-          "label": "Content"
-        },
-        {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "Body"
-            },
-            {
-              "value": "subtitle",
-              "label": "Subtitle"
-            }
-          ],
-          "default": "body",
-          "label": "Text style"
-        }
-      ]
-    },
-    {
-      "type": "sub-text",
-      "name": "Content",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "sub-text",
-          "default": "<p>Additional text</p>",
-          "label": "Content"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Secondary Image With Text",
-      "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "pre-text"
-        },
-        {
-          "type": "text"
-        },
-        {
-          "type": "sub-text"
-        }
-      ]
     }
   ]
 }

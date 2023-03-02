@@ -223,6 +223,10 @@
 
 /* base */
 
+#MainContent {
+  overflow:hidden;
+}
+
 .no-js:not(html) {
   display: none !important;
 }
