@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+    {% unless template contains 'cart' %}
+      {{ 'prefetch.js' | asset_url | script_tag }}
+    {% endunless %}
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -289,6 +292,7 @@
 
     <script>
       
+      
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
@@ -316,10 +320,12 @@
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       }
 
+
     </script>
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    {{ 'footer.js' | asset_url | script_tag | replace: 'src', 'defer src' }}
   </body>
 </html>
