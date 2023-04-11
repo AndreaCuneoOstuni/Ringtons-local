@@ -315,9 +315,8 @@ function validateForm(ID) {
       if (clientStatus.value == "existing-client") {
         sendUserData(userData, "Existing_customer");
        valid = false;
-        //document.querySelector("#PostcodeChecker").action =
-          "https://www.ringtons.co.uk/get-in-touch-i99";
-        //document.getElementById("PostcodeChecker").submit();
+        document.querySelector("#PostcodeChecker").action = "https://www.ringtons.co.uk/get-in-touch-i99";
+        document.getElementById("PostcodeChecker").submit();
       }
     }
 
