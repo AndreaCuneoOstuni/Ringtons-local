@@ -104,7 +104,6 @@ function nextPrev(n) {
         console.log("Not in area", userData);
         sendUserData(userData, "Not_In_The_Area");
         document.querySelector("#PostcodeChecker").action ="/pages/thank-you/";
-        document.getElementById("PostcodeChecker").submit();
       }
     }
 
@@ -113,7 +112,6 @@ function nextPrev(n) {
         sendUserData(userData, "Existing_customer");
         document.querySelector("#PostcodeChecker").action =
           "https://www.ringtons.co.uk/get-in-touch-i99";
-        document.getElementById("PostcodeChecker").submit();
       }
     }
     console.log("Raw Data", userData);
@@ -134,12 +132,10 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
+    console.log("New_Leads", userData);
     sendUserData(userData, "New_Leads");
     document.querySelector("#PostcodeChecker").action =
       "/pages/well-be-in-touch";
-    document.getElementById("PostcodeChecker").submit();
-    // return false;
-    // exit;
     return;
   }
 
@@ -316,7 +312,6 @@ function validateForm(ID) {
         sendUserData(userData, "Existing_customer");
        valid = false;
         document.querySelector("#PostcodeChecker").action = "https://www.ringtons.co.uk/get-in-touch-i99";
-        document.getElementById("PostcodeChecker").submit();
       }
     }
 
