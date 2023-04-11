@@ -13,16 +13,23 @@ const userData = {
   referral: "",
 };
 
-function callback() {
+let recaptchaRes = "";
+
+function callback(res) {
   const submitButton = document.getElementById("nextBtn");
+  recaptchaRes = res;
+  console.log(res);
   submitButton.removeAttribute("disabled");
 }
 
 function expiredCallback(){
+  recaptchaRes = "";
   const submitButton = document.getElementById("nextBtn");
   let btnText = submitButton.innerText;
   if(btnText == 'Submit'){
     submitButton.setAttribute("disabled", "disabled");
+  } else {
+    submitButton.removeAttribute("disabled");
   }
 
 }
@@ -42,9 +49,12 @@ function showTab(n) {
   }
   if (n == x.length - 1) {
     document.getElementById("nextBtn").innerHTML = "Submit";
-    document.getElementById("nextBtn").setAttribute("disabled", "disabled");
+    if (recaptchaRes == "") {
+      document.getElementById("nextBtn").setAttribute("disabled", "disabled");
+    }
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").removeAttribute("disabled");
   }
   // ... and run a function that displays the correct step indicator:
   if (document.getElementById("prevBtn").style.display == "inline") {
@@ -81,6 +91,7 @@ function nextPrev(n) {
     sedDataLayerEvent(n, currentTab);
 
     if (ID == 'PPCFirstStep' && userPostcode) {
+      console.log("PPCFirstStep value", userPostcode.value);
       let compactPostcode = ","+userPostcode.value.toUpperCase().replace(/\s/g, "")+",";
       let position = deliverablePostcodes.indexOf(compactPostcode);
       console.log(compactPostcode);
@@ -91,25 +102,23 @@ function nextPrev(n) {
         document.getElementById("postcode").value = userPostcode.value;
       } else {
         console.log("Not in area", userData);
-        // sendUserData(userData, "Not_In_The_Area");
+        sendUserData(userData, "Not_In_The_Area");
         document.querySelector("#PostcodeChecker").action ="/pages/thank-you/";
-        //document.getElementById("PostcodeChecker").submit();
+        document.getElementById("PostcodeChecker").submit();
       }
     }
 
     if (ID == 'PPCSecondStep' && clientStatusField) {
       if (clientStatusField.value == "existing-client") {
-        console.log("PPCSecondStep value", clientStatusField.value);
-        console.log("Existing customer", userData);
-        // sendUserData(userData, "Existing_customer");
+        sendUserData(userData, "Existing_customer");
         document.querySelector("#PostcodeChecker").action =
           "https://www.ringtons.co.uk/get-in-touch-i99";
-        //document.getElementById("PostcodeChecker").submit();
+        document.getElementById("PostcodeChecker").submit();
       }
     }
     console.log("Raw Data", userData);
     //sending current data to raw data tab
-    // sendUserData(userData, "Raw_data");
+    sendUserData(userData, "Raw_data");
   }
 
   if(n == -1){
@@ -125,10 +134,10 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    //sendUserData(userData, "New_Leads");
+    sendUserData(userData, "New_Leads");
     document.querySelector("#PostcodeChecker").action =
       "/pages/well-be-in-touch";
-    //document.getElementById("PostcodeChecker").submit();
+    document.getElementById("PostcodeChecker").submit();
     // return false;
     // exit;
     return;
@@ -304,9 +313,9 @@ function validateForm(ID) {
       userData.activeClient = clientStatus.value;
       //trying to get the redirect done before the next step is shown
       if (clientStatus.value == "existing-client") {
-        //sendUserData(userData, "Existing_customer");
+        sendUserData(userData, "Existing_customer");
        valid = false;
-        document.querySelector("#PostcodeChecker").action =
+        //document.querySelector("#PostcodeChecker").action =
           "https://www.ringtons.co.uk/get-in-touch-i99";
         //document.getElementById("PostcodeChecker").submit();
       }
