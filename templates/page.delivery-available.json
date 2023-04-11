@@ -1,1 +1,184 @@
-{"sections":{"ea107a6f-b178-4d12-8fcd-4b9b5abf5cc8":{"type":"secondary-image-with-text","settings":{"image":"shopify:\/\/shop_images\/Group-153.png","layout":"image_first","title":"We'll be in touch soon!","title_capitalization":"none","sub-title":"","pre-text":"","text":"<p>We’ll call you within the next two working days. In the meantime, feel free to click the links at the top of the page to browse our online range of delicious products.<\/p>","sub-text":"","desktop_content_alignment":"left","color_scheme":"background-1","mobile_content_alignment":"center","padding_top":36,"padding_bottom":0}},"42c9d117-9d04-44a1-b915-ffee2494f5c6":{"type":"multicolumn","blocks":{"template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-0":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Van_94ce1287-46a5-4a37-a601-3fef46d317e9.png","title":"What's next?","text":"<p>We’ll call you to let you know when we’re next in your area, and give you more information such as our prices, and confirm whether you would like to book your first free personal delivery. We’ll also send you a welcome pack!<\/p>","link_label":"","link":""}},"template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-1":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Hamper_7c448076-1cfa-4442-b5a9-9a110673bb3f.png","title":"What happens on the day?","text":"<p>We’ll bring a basket full of delicious, award-winning goodies for you to choose from. You won’t even need to change out of your slippers! We take contactless payments too. You’ll also receive a free packet of biscuits with your first order*!<\/p>","link_label":"","link":""}},"template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-2":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Diary.png","title":"Will I need to arrange more visits?","text":"<p>No, we want you to relax and put your feet up, so we’ll pop round every two weeks or every month after your first visit. Don’t worry, there’s no obligation to buy anything every time, and there’s no subscription involved.<\/p>","link_label":"","link":""}}},"block_order":["template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-0","template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-1","template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-2"],"settings":{"title":"","heading_size":"h2","image_width":"third","image_ratio":"adapt","columns_desktop":3,"column_alignment":"center","background_style":"none","button_label":"Button label","button_link":"","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0}},"f440aee1-cdba-435e-bfb6-2e2449c8bb90":{"type":"multicolumn","blocks":{"template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-0":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/deliveryMan.png","title":"","text":"<p>Got a question? We’re here to help. Give us a call or send us an email.<\/p>","link_label":"Get in touch","link":"https:\/\/www.ringtons.co.uk\/get-in-touch-i99"}},"template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-1":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/FAQs.png","title":"","text":"<p>Want to know more? Take a look at our frequently asked questions.<\/p>","link_label":"FAQs","link":"https:\/\/www.ringtons.co.uk\/faqs-i299"}},"template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-2":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Newsletter.png","title":"","text":"<p>Brewing a cuppa? Read out latest newsletter while you wait.<\/p>","link_label":"Newsletter","link":"https:\/\/www.ringtons.co.uk\/downloads\/630787e4c8fd5537Christmas_newsletter_2022.pdf"}}},"block_order":["template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-0","template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-1","template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-2"],"settings":{"title":"","heading_size":"h1","image_width":"full","image_ratio":"square","columns_desktop":3,"column_alignment":"center","background_style":"primary","button_label":"","button_link":"","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":36}},"e9f22a4f-fa60-40e8-9622-fd8003c94d6e":{"type":"rich-text","blocks":{"template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-1":{"type":"text","settings":{"text":"<p>*T&Cs apply. Choose a free packet of biscuits from Ringtons core range, on your first Ringtons doorstep delivery, when you purchase tea or coffee. Ringtons reserves the right to amend or retract this offer. <\/p>"}},"template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-0":{"type":"heading","disabled":true,"settings":{"heading":"<p>Talk about your brand<\/p>","heading_size":"h1"}},"template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-2":{"type":"button","disabled":true,"settings":{"button_label":"Button label","button_link":"","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-1","template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-0","template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-2"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"background-1","full_width":true,"padding_top":0,"padding_bottom":52}}},"order":["ea107a6f-b178-4d12-8fcd-4b9b5abf5cc8","42c9d117-9d04-44a1-b915-ffee2494f5c6","f440aee1-cdba-435e-bfb6-2e2449c8bb90","e9f22a4f-fa60-40e8-9622-fd8003c94d6e"]}
+{
+  "sections": {
+    "ea107a6f-b178-4d12-8fcd-4b9b5abf5cc8": {
+      "type": "secondary-image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group-153.png",
+        "layout": "image_first",
+        "title": "We'll be in touch soon!",
+        "title_capitalization": "none",
+        "sub-title": "",
+        "pre-text": "",
+        "text": "<p>Our Customer Care team is checking for your nearest available van, packed with our unique tea blends and much more. We’ll be in touch in the next two working days.<\/p>\n\n<p>Please keep an eye out for a call from our Customer Care team on 0800 052 2440.<\/p>",
+        "sub-text": "",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "42c9d117-9d04-44a1-b915-ffee2494f5c6": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Van_94ce1287-46a5-4a37-a601-3fef46d317e9.png",
+            "title": "What's next?",
+            "text": "<p>We’ll call you to let you know when we’re next in your area, and give you more information such as our prices, and confirm whether you would like to book your first free personal delivery. We’ll also send you a welcome pack!<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hamper_7c448076-1cfa-4442-b5a9-9a110673bb3f.png",
+            "title": "What happens on the day?",
+            "text": "<p>We’ll bring a basket full of delicious, award-winning goodies for you to choose from. You won’t even need to change out of your slippers! We take contactless payments too. You’ll also receive a free packet of biscuits with your first order*!<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Diary.png",
+            "title": "Will I need to arrange more visits?",
+            "text": "<p>No, we want you to relax and put your feet up, so we’ll pop round every two weeks or every month after your first visit. Don’t worry, there’s no obligation to buy anything every time, and there’s no subscription involved.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-0",
+        "template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-1",
+        "template--17214508007735__42c9d117-9d04-44a1-b915-ffee2494f5c6-16705813246a7819c6-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "f440aee1-cdba-435e-bfb6-2e2449c8bb90": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/deliveryMan.png",
+            "title": "",
+            "text": "<p>Got a question? We’re here to help. Give us a call or send us an email.<\/p>",
+            "link_label": "Get in touch",
+            "link": "https:\/\/www.ringtons.co.uk\/get-in-touch-i99"
+          }
+        },
+        "template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FAQs.png",
+            "title": "",
+            "text": "<p>Want to know more? Take a look at our frequently asked questions.<\/p>",
+            "link_label": "FAQs",
+            "link": "https:\/\/www.ringtons.co.uk\/faqs-i299"
+          }
+        },
+        "template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Newsletter.png",
+            "title": "",
+            "text": "<p>Brewing a cuppa? Read out latest newsletter while you wait.<\/p>",
+            "link_label": "Newsletter",
+            "link": "https:\/\/www.ringtons.co.uk\/downloads\/630787e4c8fd5537Christmas_newsletter_2022.pdf"
+          }
+        }
+      },
+      "block_order": [
+        "template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-0",
+        "template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-1",
+        "template--17214508007735__f440aee1-cdba-435e-bfb6-2e2449c8bb90-16705813246a7819c6-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "e9f22a4f-fa60-40e8-9622-fd8003c94d6e": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*T&Cs apply. Choose a free packet of biscuits from Ringtons core range, on your first Ringtons doorstep delivery, when you purchase tea or coffee. Ringtons reserves the right to amend or retract this offer. <\/p>"
+          }
+        },
+        "template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-1",
+        "template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-0",
+        "template--17214508007735__e9f22a4f-fa60-40e8-9622-fd8003c94d6e-16728582109beb7eeb-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "ea107a6f-b178-4d12-8fcd-4b9b5abf5cc8",
+    "42c9d117-9d04-44a1-b915-ffee2494f5c6",
+    "f440aee1-cdba-435e-bfb6-2e2449c8bb90",
+    "e9f22a4f-fa60-40e8-9622-fd8003c94d6e"
+  ]
+}
