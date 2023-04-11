@@ -29,18 +29,15 @@
             <input id="PCCNumber" placeholder="Contact Number*" type="tel" value="" onclick="this.className = ''">
           </p>
           <p class="pcc-form__input pcc-form__input--two-cols">
-            <input
-              id="PCCPostcode"
-              placeholder="Postcode* e.g. NE4 5TD"
-              type="text"
-              value=""
-              onclick="this.className = ''"
-            >
+            <!-- get address input -->
+            <input id="formatted_address_0" placeholder="Start typing your address*" type="text" value="" onclick="this.className = ''">
+            <!-- end of get address input -->
           </p>
           <p class="pcc-form__input">
             <input id="PCCEmail" placeholder="Email*" type="email" value="" onclick="this.className = ''">
           </p>
-
+          <input id="PCCLat" value="" hidden>
+          <input id="PCCLng" value="" hidden>
           <p class="pcc-form__input pcc-form__text-one-column--with-checkbox">
             <label class="pcc-form__checkbox-label"
               >Want to keep up to date with our news and special offers? Just select the checkbox below. Don’t worry, we
@@ -56,13 +53,6 @@
             </label>
           </p>
         </div>
-        <!--
-          <p class="pcc-form__instructions">
-            Having difficulty filling in this form? No problem! Just visit our
-            <a href="https://www.ringtons.co.uk/get-in-touch-i99" target="_blank">Contact page</a> for alternative ways to
-            get in touch
-          </p>
-        -->
 
         <p class="terms-conditions-text">
           *T&Cs apply. Choose a free packet of biscuits from Ringtons core range, on your first Ringtons doorstep
@@ -166,19 +156,6 @@
             </label>
           </p>
 
-          <p class="pcc-form__input">
-            <!--
-              <select id="PCCRequest" class="pcc-form__input-select" name="hear-about-us" onclick="this.className = ''">
-                <option disabled selected value="not-selected">
-                  When we contact you, what information would you like from us?
-                </option>
-                <option value="price-list">Price list</option>
-                <option value="delivery-days">Days you deliver in my area</option>
-                <option value="arrange-visit">Arrange a visit</option>
-                <option value="other">Other</option>
-              </select>
-            -->
-          </p>
           <p class="pcc-form__input hidden">
             <input
               id="PCCRequestOther"

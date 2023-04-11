@@ -1,5 +1,6 @@
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
+let foundPostcode = "";
 const userData = {
   email: "",
   name: "",
@@ -854,71 +855,25 @@ const polygons = [
   },
 ];
 
-
-// define your postcode
-// let postcode = "NE66 1UL";
-
 // use the geocoder to get the LatLng of the postcode
 let geocoder = new google.maps.Geocoder();
 
-// This can be replaced with anything that takes an address/postcode/etc and returns a lat/lng
-const locate = async (postcode) => {
-  console.log("Locating " + postcode);
-  // Get probable locations....
-  let requestUrl = `https://api.getAddress.io/location/${postcode}?api-key=K3Kz7LeNV0WF1SM68Ek2nA37520`;
-  const suggestions = await fetch(requestUrl).then((res) => {
-    if (!res.ok) {
-      console.log(res);
-      throw new Error("Network response was not ok", res);
-    }
-    return res.json();
-  })
-  .catch((err) => {
-    console.log("Error fetching suggestions", err);
-  });
-
-  if (!suggestions?.suggestions) {
-      console.log("No suggestions");
-      return;
-  }
-
-  // Geolocate the first suggestion...
-  const addr = await fetch(
-      `https://api.getAddress.io/get-location/${suggestions.suggestions[0].id}?api-key=K3Kz7LeNV0WF1SM68Ek2nA37520`
-  ).then((res) => res.json());
-
-  if (!addr.latitude || !addr.longitude) {
-      return;
-  }
-
-  return { lat: addr.latitude, lng: addr.longitude };
-};
-
 // Take a written address, geocode it, and look it up in all the polygons.
-const lookup = async (postcode) => {
+const lookup = async (lat, lng) => {
 
   document.getElementById("PostcodeChecker").style.visibility = 'hidden';
-  let userPostcode = postcode.toUpperCase();
-
-  // Get a lat long
-  const addr = await locate(postcode);
-  console.log(addr);
-  if (!addr) {
-      console.log("Unable to find address");
-      return;
-  }
 
   // Iterate through the polygons and see if the lat long is in any of them
   for (const poly of polygons) {
     const found = google.maps.geometry.poly.containsLocation(
-      new google.maps.LatLng(addr.lat, addr.lng),
+      new google.maps.LatLng(lat, lng),
       poly.polygon
     );
     if (found) {
         console.log(`Found in ${poly.name} region`);
         // TEMP
         document.getElementById("PostcodeChecker").style.visibility = 'visible';
-        document.getElementById("postcode").value = userPostcode;
+        //document.getElementById("postcode").value = userPostcode;
         return false;
     }
   }
@@ -930,8 +885,6 @@ const lookup = async (postcode) => {
   return true;
 
 };
-
-//lookup(postcode);
 
 function showTab(n) {
   // This function will display the specified tab of the form ...
@@ -970,7 +923,7 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which tab to display
   let x = document.getElementsByClassName("pcc-form__tab");
-  let userPostcode = document.getElementById("PCCPostcode");
+  let userPostcode = document.getElementById("formatted_address_0");
   let ID = x[currentTab].getAttribute("id");
   let clientStatusField = document.getElementById("PCCActiveClient");
 
@@ -983,9 +936,9 @@ function nextPrev(n) {
     sedDataLayerEvent(n, currentTab);
 
     if (ID == 'PPCFirstStep' && userPostcode) {
-      let postcode = userPostcode.value;
-      let postcodeInArea = lookup(postcode);
-      console.log(postcodeInArea);
+      let lat = document.getElementById("PCCLat").value;
+      let lng = document.getElementById("PCCLng").value;
+      lookup(lat,lng);
     }
 
     if (ID == 'PPCSecondStep' && clientStatusField) {
@@ -1058,7 +1011,7 @@ function validateForm(ID) {
     let name = document.getElementById("PCCName");
     let lastname = document.getElementById("PCCLastName");
     let phone = document.getElementById("PCCNumber");
-    let postcode = document.getElementById("PCCPostcode");
+    let address = document.getElementById("formatted_address_0");
 
     // Empty the truthy/falsy array
     validValuesArr = [];
@@ -1129,32 +1082,16 @@ function validateForm(ID) {
     }
 
     // Validate postcode
-    if (postcode) {
-      validQ3 = regexPC.test(postcode.value);
-      if (!validQ3) {
+    if (address) {
+      validQ3 = address.value;
+      if (validQ3 == "") {
         validValuesArr.push("0");
-        postcode.className += " invalid";
-        postcode.placeholder = "Please insert your postcode";
-      } else {
-        if (
-          //here we can set the accepted length of postcodes in number of digits
-          postcode.value.replace(/\s/g, "").length < 4 ||
-          postcode.value.replace(/\s/g, "").length > 8
-        ) {
-
-        // document.getElementById("PostcodeChecker").style.opacity = "100";
-        validValuesArr.push("0");
-        postcode.className += " invalid";
-        postcode.placeholder = "Please insert your postcode";
-        } else {
+        address.className += " invalid";
+        address.placeholder = "Please type your address";
+      }  else {
         validValuesArr.push("1");
-        userData.postcode = postcode.value;
-        }
+        userData.postcode = foundPostcode;
       }
-    } else {
-      validValuesArr.push("0");
-      postcode.className += " invalid";
-      postcode.placeholder = "Please insert your postcode";
     }
 
     if (validValuesArr.indexOf("0") >= 0) {
@@ -1256,7 +1193,7 @@ function validateForm(ID) {
         if (/\d/.test(validQ3)) {
           userData.postcode = postcode.value;
         } else {
-          userData.postcode = document.getElementById("PCCPostcode").value;
+          userData.postcode = document.getElementById("formatted_address_0").value;
         }
       }
     } else {
@@ -1301,28 +1238,6 @@ function validateForm(ID) {
 
     // Empty the truthy/falsy array
     validValuesArr = [];
-    // Validate request
-    /* if (request) {
-      validQ1 = request.value;
-      validQ2  = requestOther.value;
-      if (validQ1 == 'not-selected') {
-        validValuesArr.push('0');
-        request.className += " invalid";
-      } else if (validQ1 == 'other' && validQ2 == '') {
-        validValuesArr.push('0');
-        requestOther.className += " invalid";
-      } else {
-        validValuesArr.push('1');
-        if (validQ1 != 'not-selected' && validQ1 != 'other') {
-          userData.request = request.value;
-        } else {
-          userData.request = requestOther.value;
-        }
-      }
-    } else {
-      validValuesArr.push('0');
-      request.className += " invalid";
-    }*/
 
     // Validate address
     if (referral) {
@@ -1394,18 +1309,12 @@ function sendUserData(data, tabId) {
     .catch((error) => console.log("error", error));
 }
 
-document.addEventListener("getaddress-find-address-selected", function (e) {
-  document.querySelector("#getaddress_dropdown").classList.add("hidden");
+document.addEventListener("getaddress-autocomplete-address-selected", function (e) {
   console.log(e.address);
-  let formatted_address = e.address.formatted_address;
-  let address = "";
-  for (line in formatted_address) {
-    if (formatted_address[line] != "") {
-      address += formatted_address[line] + ", ";
-    }
-  }
-
-  document.getElementById("PCCAddress").value = address.slice(0, -2);
+  let address = e.address;
+  document.querySelector("#PCCLat").value = address.latitude;
+  document.querySelector("#PCCLng").value = address.longitude;
+  foundPostcode = address.postcode;
 });
 
 document.addEventListener("getaddress-find-suggestions", function (e) {
@@ -1422,9 +1331,7 @@ document.addEventListener("getaddress-find-suggestions-failed", function (e) {
   console.log(e.message);
 });
 
-document.addEventListener(
-  "getaddress-find-address-selected-failed",
-  function (e) {
+document.addEventListener("getaddress-find-address-selected-failed", function (e) {
     console.log(e.status);
     console.log(e.message);
   }
@@ -1440,16 +1347,6 @@ document.getElementById("PCCReferral").addEventListener("change", function (e) {
   }
 });
 
-/*document.getElementById('PCCRequest').addEventListener('change', function(e) {
-  console.log(e);
-  let requestElem = document.getElementById('PCCRequest');
-  let requestOtherElem = document.getElementById('PCCRequestOther');
-  if (requestElem.value == 'other') {
-    requestOtherElem.parentElement.classList.remove('hidden');
-  } else {
-    requestOtherElem.parentElement.classList.add('hidden');
-  }
-});*/
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
