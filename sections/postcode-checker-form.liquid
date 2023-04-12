@@ -1,9 +1,7 @@
 {{ 'component-postcode-checker-form.css' | asset_url | stylesheet_tag }}
 <script src="https://cdn.getaddress.io/scripts/getaddress-find-2.0.0.min.js"></script>
-
 <script src="https://cdn.getaddress.io/scripts/getaddress-autocomplete-1.1.3.min.js"></script>
-
-<script src="{{ 'papaparse.min.js'  | asset_url }}"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!-- include the Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASbWYGE0CbWyJwJ4mb9wtMnGDoeHJ82BE&libraries=geometry"></script>
 <script src="{{ 'postcode-checker-form.js' | asset_url }}" defer="defer"></script>
@@ -17,7 +15,7 @@
       <!-- Step 1 -->
 
       <div id="PPCFirstStep" class="pcc-form__tab">
-        <h3>First, let’s check your postcode so we can confirm that you’re within our delivery area</h3>
+        <h3>First, let’s check your address so we can confirm that you’re within our delivery area</h3>
         <div class="pcc-form__input-container">
           <p class="pcc-form__input pcc-form__input--two-cols">
             <input id="PCCName" placeholder="First Name*" type="text" value="" onclick="this.className = ''">
@@ -30,7 +28,7 @@
           </p>
           <p class="pcc-form__input pcc-form__input--two-cols">
             <!-- get address input -->
-            <input id="formatted_address_0" placeholder="Start typing your address*" type="text" value="" onclick="this.className = ''">
+            <input id="postcode" placeholder="Start typing your address*" type="text" value="" onclick="this.className = ''">
             <!-- end of get address input -->
           </p>
           <p class="pcc-form__input">
@@ -108,7 +106,7 @@
             <input id="county" placeholder="County" type="text">
           </p>
           <p class="pcc-form__input pcc-form__input--two-cols">
-            <input id="postcode" placeholder="Postcode*" type="text">
+            <input id="userPostcode" placeholder="Postcode*" type="text">
           </p>
         </div>
         <p class="terms-conditions-text">
@@ -156,6 +154,20 @@
             </label>
           </p>
 
+          <p class="pcc-form__input">
+            <!--
+              <select id="PCCRequest" class="pcc-form__input-select" name="hear-about-us" onclick="this.className = ''">
+                <option disabled selected value="not-selected">
+                  When we contact you, what information would you like from us?
+                </option>
+                <option value="price-list">Price list</option>
+                <option value="delivery-days">Days you deliver in my area</option>
+                <option value="arrange-visit">Arrange a visit</option>
+                <option value="other">Other</option>
+              </select>
+            -->
+          </p>
+
           <p class="pcc-form__input hidden">
             <input
               id="PCCRequestOther"
@@ -187,6 +199,12 @@
               onclick="this.className = ''"
             >
           </p>
+          <div>
+            <p class="pcc-form__input__recaptcha">Please verify your request*</p>
+            <div id="recaptchaContainer" style="transform:scale(0.85);transform-origin:0 0">
+              <div class="g-recaptcha" data-sitekey="6LdkdWMlAAAAAJUSeIr3vhKGdZ1GaIa9NEVlhwNI" data-callback="callback" data-expired-callback="expiredCallback"></div>
+            </div>
+          </div>
         </div>
         <p class="terms-conditions-text">
           *T&Cs apply. Choose a free packet of biscuits from Ringtons core range, on your first Ringtons doorstep
@@ -209,7 +227,7 @@
       </div>
     </form>
     <script>
-      getAddress.autocomplete('formatted_address_0','K3Kz7LeNV0WF1SM68Ek2nA37520');
+      getAddress.autocomplete('postcode','K3Kz7LeNV0WF1SM68Ek2nA37520');
     </script>
   </div>
 </div>

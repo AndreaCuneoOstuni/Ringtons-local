@@ -14,6 +14,26 @@ const userData = {
   referral: "",
 };
 
+let recaptchaRes = "";
+
+function callback(res) {
+  const submitButton = document.getElementById("nextBtn");
+  recaptchaRes = res;
+  submitButton.removeAttribute("disabled");
+}
+
+function expiredCallback(){
+  recaptchaRes = "";
+  const submitButton = document.getElementById("nextBtn");
+  let btnText = submitButton.innerText;
+
+  if(btnText == 'Submit'){
+    submitButton.setAttribute("disabled", "disabled");
+  } else {
+    submitButton.removeAttribute("disabled");
+  }
+}
+
 // define your polygons (as arrays of LatLng coordinates)
 const polygons = [
   {
@@ -891,15 +911,23 @@ function showTab(n) {
   var x = document.getElementsByClassName("pcc-form__tab");
   x[n].style.display = "block";
   // ... and fix the Previous/Next buttons:
+  // Show Previous button if not on first tab
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
+  // Show Next button if not on last tab
+  // Rename to Submit if on last tab
+  // And controll recaptcha
   if (n == x.length - 1) {
     document.getElementById("nextBtn").innerHTML = "Submit";
+    if (recaptchaRes == "") {
+      document.getElementById("nextBtn").setAttribute("disabled", "disabled");
+    }
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").removeAttribute("disabled");
   }
   // ... and run a function that displays the correct step indicator:
   if (document.getElementById("prevBtn").style.display == "inline") {
@@ -923,7 +951,7 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which tab to display
   let x = document.getElementsByClassName("pcc-form__tab");
-  let userPostcode = document.getElementById("formatted_address_0");
+  let userPostcode = document.getElementById("formatted_address_4");
   let ID = x[currentTab].getAttribute("id");
   let clientStatusField = document.getElementById("PCCActiveClient");
 
@@ -969,12 +997,10 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
+    console.log("New_Leads", userData);
     sendUserData(userData, "New_Leads");
     document.querySelector("#PostcodeChecker").action =
       "/pages/well-be-in-touch";
-    //document.getElementById("PostcodeChecker").submit();
-    // return false;
-    // exit;
     return;
   }
 
@@ -985,24 +1011,27 @@ function nextPrev(n) {
 function validateForm(ID) {
   // This function deals with validation of the form fields
   let x,
-    y,
-    i,
-    validQ1,
-    validQ2,
-    validQ2a,
-    validQ3,
-    optInResponse,
-    valid = true;
-  x = document.getElementsByClassName("pcc-form__tab");
-  y = x[currentTab].getElementsByTagName("input");
+  y,
+  i,
+  validQ1,
+  validQ2,
+  validQ2a,
+  validQ3,
+  optInResponse,
+  valid = true;
+
+  // Declare the truthy/falsy array
+  let validValuesArr = [];
+
   // Regex
   let regexEm = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   let regexName = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/gim;
   let regexLastName = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/gim;
   let regexPC = /[\S\s]+[\S]+/;
   let regexPhone = /^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm;
-  // Declare the truthy/falsy array
-  let validValuesArr = [];
+
+  x = document.getElementsByClassName("pcc-form__tab");
+  y = x[currentTab].getElementsByTagName("input");
 
   // First step
   if (ID == "PPCFirstStep") {
@@ -1011,7 +1040,7 @@ function validateForm(ID) {
     let name = document.getElementById("PCCName");
     let lastname = document.getElementById("PCCLastName");
     let phone = document.getElementById("PCCNumber");
-    let address = document.getElementById("formatted_address_0");
+    let address = document.getElementById("formatted_address_4");
 
     // Empty the truthy/falsy array
     validValuesArr = [];
@@ -1120,6 +1149,7 @@ function validateForm(ID) {
     let clientStatus = document.getElementById("PCCActiveClient");
     // Empty the truthy/falsy array
     validValuesArr = [];
+
     // Validate Active Client
     if (clientStatus.value == "not-selected") {
       clientStatus.className += " invalid";
@@ -1128,17 +1158,15 @@ function validateForm(ID) {
       userData.activeClient = clientStatus.value;
       //trying to get the redirect done before the next step is shown
       if (clientStatus.value == "existing-client") {
+        console.log("Existing_customer", userData);
         sendUserData(userData, "Existing_customer");
-       valid = false;
-        document.querySelector("#PostcodeChecker").action =
-          "https://www.ringtons.co.uk/get-in-touch-i99";
-        //document.getElementById("PostcodeChecker").submit();
+        valid = false;
+        document.querySelector("#PostcodeChecker").action = "https://www.ringtons.co.uk/get-in-touch-i99";
       }
     }
 
     if (valid) {
-      document.getElementsByClassName("pcc-form__step")[currentTab].className +=
-        " finish";
+      document.getElementsByClassName("pcc-form__step")[currentTab].className += " finish";
     }
 
     return {
@@ -1155,11 +1183,12 @@ function validateForm(ID) {
     let address2 = document.getElementById("formatted_address_2");
     let town = document.getElementById("town_or_city");
     let county = document.getElementById("county");
-    let postcode = document.getElementById("postcode");
+    let postcode = document.getElementById("userPostcode");
     let fullAddress = "";
 
     // Empty the truthy/falsy array
     validValuesArr = [];
+
 
     // Validate address
     if (address) {
@@ -1193,7 +1222,7 @@ function validateForm(ID) {
         if (/\d/.test(validQ3)) {
           userData.postcode = postcode.value;
         } else {
-          userData.postcode = document.getElementById("formatted_address_0").value;
+          userData.postcode = document.getElementById("postcode").value;
         }
       }
     } else {
@@ -1206,8 +1235,7 @@ function validateForm(ID) {
     }
 
     if (valid) {
-      document.getElementsByClassName("pcc-form__step")[currentTab].className +=
-        " finish";
+      document.getElementsByClassName("pcc-form__step")[currentTab].className += " finish";
     }
 
     return {
@@ -1218,8 +1246,6 @@ function validateForm(ID) {
 
   // Fourth Step
   if (ID == "PPCFourthStep") {
-    //let request = document.getElementById('PCCRequest');
-    let requestOther = document.getElementById("PCCRequestOther");
     let referral = document.getElementById("PCCReferral");
     let referralOther = document.getElementById("PCCReferralOther");
 
@@ -1243,10 +1269,7 @@ function validateForm(ID) {
     if (referral) {
       validQ1 = referral.value;
       validQ2 = referralOther.value;
-      /*if (validQ1 == "not-selected") {
-        validValuesArr.push("0");
-        referral.className += " invalid";
-      } else*/ if (validQ1 == "other" && validQ2 == "") {
+      if (validQ1 == "other" && validQ2 == "") {
         validValuesArr.push("0");
         referralOther.className += " invalid";
       } else {
@@ -1267,8 +1290,7 @@ function validateForm(ID) {
     }
 
     if (valid) {
-      document.getElementsByClassName("pcc-form__step")[currentTab].className +=
-        " finish";
+      document.getElementsByClassName("pcc-form__step")[currentTab].className += " finish";
     }
 
     return {
@@ -1309,11 +1331,33 @@ function sendUserData(data, tabId) {
     .catch((error) => console.log("error", error));
 }
 
+
+/*
+  document.addEventListener("getaddress-find-address-selected", function (e) {
+    document.querySelector("#getaddress_dropdown").classList.add("hidden");
+    console.log(e.address);
+    let formatted_address = e.address.formatted_address;
+    let address = "";
+    for (line in formatted_address) {
+      if (formatted_address[line] != "") {
+        address += formatted_address[line] + ", ";
+      }
+    }
+
+    document.getElementById("PCCAddress").value = address.slice(0, -2);
+  });
+ */
+
 document.addEventListener("getaddress-autocomplete-address-selected", function (e) {
   console.log(e.address);
   let address = e.address;
   document.querySelector("#PCCLat").value = address.latitude;
   document.querySelector("#PCCLng").value = address.longitude;
+  document.querySelector("#formatted_address_0").value = address.line_1;
+  document.querySelector("#formatted_address_1").value = address.line_2;
+  document.querySelector("#formatted_address_2").value = address.line_3;
+  document.querySelector("#county").value = address.county;
+  document.querySelector("#userPostcode").value = address.postcode;
   foundPostcode = address.postcode;
 });
 
@@ -1321,7 +1365,7 @@ document.addEventListener("getaddress-find-suggestions", function (e) {
   console.log(e.suggestions);
   if (e.suggestions.length <= 0) {
     document.querySelector("#getaddress_dropdown").classList.add("hidden");
-    document.querySelector("#postcode").value =
+    document.querySelector("#userPostcode").value =
       "Please add your address below.";
   }
 });
