@@ -240,6 +240,13 @@ p.pcc-form__input {
   margin-top: 2rem;
 }
 
+/* ReCaptcha label */
+p.pcc-form__input__recaptcha {
+  text-align: left;
+  font-size: 13px;
+  color: #303030;
+}
+
 /* Ideas Postcode checker */
 
 .pcc-form__postcode-lookup {
@@ -305,6 +312,11 @@ select#getaddress_dropdown {
 
 #getaddress_button:not(:disabled), [type=button]:not(:disabled) {
   cursor: pointer;
+}
+
+.pcc-form__button-container button[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
 #getaddress_button>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {

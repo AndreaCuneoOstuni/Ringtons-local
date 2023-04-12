@@ -1,1 +1,134 @@
-{"sections":{"f62ab7d8-3a8c-4f99-a102-07a34b316a70":{"type":"secondary-image-with-text","settings":{"image":"shopify:\/\/shop_images\/Group-153.png","layout":"image_first","title":"Thank you, we'll be in touch!","title_capitalization":"none","sub-title":"<p>Our Customer Care team is checking for your nearest available van, packed full of the finest tea and more. We’ll be in touch within the next two working days, look out for a call from 0800 052 2440.<\/p>","pre-text":"What can I do now?","text":"<p>You can also order our <br class=\"only-mobile-br\"> award-winning tea and treats<strong> <\/strong><a href=\"https:\/\/www.ringtons.co.uk\/\" target=\"_blank\" title=\"https:\/\/www.ringtons.co.uk\/\"><strong>online<\/strong><\/a>.<br><br class=\"only-mobile-br\">\nUse the discount code below to <br class=\"only-mobile-br\"> get <strong>20% off your first order!<\/strong><\/p>","sub-text":"<p>USE CODE: <strong>DIS20<\/strong><\/p>","desktop_content_alignment":"left","color_scheme":"background-1","mobile_content_alignment":"center","padding_top":36,"padding_bottom":36}},"9cc7d60b-0096-4ff2-b7aa-f75369f49df6":{"type":"product-multicolumn","blocks":{"template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-0":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/BreakfastTeaBags.png","title":"Ringtons Breakfast Tea Bags x50","price":"£1.91","link":"https:\/\/www.ringtons.co.uk\/tea-c1\/tea-bags-c2\/ringtons-breakfast-tea-bags-x-50-p1290"}},"template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-1":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/GoldTeaBags.png","title":"Ringtons Gold Tea Bags x50","price":"£2.12","link":"https:\/\/www.ringtons.co.uk\/tea-c1\/tea-bags-c2\/ringtons-gold-tea-bags-x-50-p1288"}},"template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-2":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/GingerSnaps.png","title":"Ringtons Hand Baked Ginger Snaps 300g","price":"£2.20","link":"https:\/\/www.ringtons.co.uk\/treats-c8\/biscuits-c13\/ringtons-hand-baked-ginger-snaps-300g-p31"}}},"block_order":["template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-0","template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-1","template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-2"],"settings":{"title":"You might like","heading_size":"h1","image_width":"full","image_ratio":"square","columns_desktop":3,"column_alignment":"center","background_style":"none","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":0}},"f07d4247-8efc-4e42-82f5-b6b63342a2b5":{"type":"multicolumn","blocks":{"template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-0":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/deliveryMan.png","title":"","text":"<p>Got a question? We’re here to help. Give us a call or send us an email.<\/p>","link_label":"Get in touch","link":"https:\/\/www.ringtons.co.uk\/get-in-touch-i99"}},"template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-1":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/FAQs.png","title":"","text":"<p>Want to know more? Take a look at our frequently asked questions.<\/p>","link_label":"FAQs","link":"https:\/\/www.ringtons.co.uk\/help-faqs-i100"}},"template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-2":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Newsletter.png","title":"","text":"<p>Brewing a cuppa? Read our latest newsletter while you wait.<\/p>","link_label":"Newsletter","link":"https:\/\/www.ringtons.co.uk\/downloads\/630787e4c8fd5537Christmas_newsletter_2022.pdf"}}},"block_order":["template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-0","template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-1","template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-2"],"settings":{"title":"","heading_size":"h1","image_width":"full","image_ratio":"square","columns_desktop":3,"column_alignment":"center","background_style":"primary","button_label":"","button_link":"","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}}},"order":["f62ab7d8-3a8c-4f99-a102-07a34b316a70","9cc7d60b-0096-4ff2-b7aa-f75369f49df6","f07d4247-8efc-4e42-82f5-b6b63342a2b5"]}
+{
+  "sections": {
+    "f62ab7d8-3a8c-4f99-a102-07a34b316a70": {
+      "type": "secondary-image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group-153.png",
+        "layout": "image_first",
+        "title": "Thank you, we'll be in touch!",
+        "title_capitalization": "none",
+        "sub-title": "<p>Our Customer Care team is currently checking whether we are able to deliver to your area. We’ll be in touch within the next two working days.<\/p>\n<p>Please keep an eye out for a call from our Customer Care team on 0800 052 2440.<\/p>",
+        "pre-text": "What can I do now?",
+        "text": "<p>You can also order our <br class=\"only-mobile-br\"> award-winning tea and treats<strong> <\/strong><a href=\"https:\/\/www.ringtons.co.uk\/\" target=\"_blank\" title=\"https:\/\/www.ringtons.co.uk\/\"><strong>online<\/strong><\/a>.<br><br class=\"only-mobile-br\">\nUse the discount code below to <br class=\"only-mobile-br\"> get <strong>20% off your first order!<\/strong><\/p>",
+        "sub-text": "<p>USE CODE: <strong>DIS20<\/strong><\/p>",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "9cc7d60b-0096-4ff2-b7aa-f75369f49df6": {
+      "type": "product-multicolumn",
+      "blocks": {
+        "template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BreakfastTeaBags.png",
+            "title": "Ringtons Breakfast Tea Bags x50",
+            "price": "£1.91",
+            "link": "https:\/\/www.ringtons.co.uk\/tea-c1\/tea-bags-c2\/ringtons-breakfast-tea-bags-x-50-p1290"
+          }
+        },
+        "template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GoldTeaBags.png",
+            "title": "Ringtons Gold Tea Bags x50",
+            "price": "£2.12",
+            "link": "https:\/\/www.ringtons.co.uk\/tea-c1\/tea-bags-c2\/ringtons-gold-tea-bags-x-50-p1288"
+          }
+        },
+        "template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GingerSnaps.png",
+            "title": "Ringtons Hand Baked Ginger Snaps 300g",
+            "price": "£2.20",
+            "link": "https:\/\/www.ringtons.co.uk\/treats-c8\/biscuits-c13\/ringtons-hand-baked-ginger-snaps-300g-p31"
+          }
+        }
+      },
+      "block_order": [
+        "template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-0",
+        "template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-1",
+        "template--17214511972663__9cc7d60b-0096-4ff2-b7aa-f75369f49df6-1670847553dd1947dc-2"
+      ],
+      "settings": {
+        "title": "You might like",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "f07d4247-8efc-4e42-82f5-b6b63342a2b5": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/deliveryMan.png",
+            "title": "",
+            "text": "<p>Got a question? We’re here to help. Give us a call or send us an email.<\/p>",
+            "link_label": "Get in touch",
+            "link": "https:\/\/www.ringtons.co.uk\/get-in-touch-i99"
+          }
+        },
+        "template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FAQs.png",
+            "title": "",
+            "text": "<p>Want to know more? Take a look at our frequently asked questions.<\/p>",
+            "link_label": "FAQs",
+            "link": "https:\/\/www.ringtons.co.uk\/help-faqs-i100"
+          }
+        },
+        "template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Newsletter.png",
+            "title": "",
+            "text": "<p>Brewing a cuppa? Read our latest newsletter while you wait.<\/p>",
+            "link_label": "Newsletter",
+            "link": "https:\/\/www.ringtons.co.uk\/downloads\/630787e4c8fd5537Christmas_newsletter_2022.pdf"
+          }
+        }
+      },
+      "block_order": [
+        "template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-0",
+        "template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-1",
+        "template--17214511972663__f07d4247-8efc-4e42-82f5-b6b63342a2b5-1670582773f07ee98a-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "f62ab7d8-3a8c-4f99-a102-07a34b316a70",
+    "9cc7d60b-0096-4ff2-b7aa-f75369f49df6",
+    "f07d4247-8efc-4e42-82f5-b6b63342a2b5"
+  ]
+}
