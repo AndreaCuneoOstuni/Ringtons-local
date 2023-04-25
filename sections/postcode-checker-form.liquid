@@ -9,13 +9,15 @@
 <div class="pcc-form center {% if section.settings.full_width == false %}pcc-form--narrow page-width{% endif %}">
   <div class="pcc-form__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding page-width">
     <form id="PostcodeChecker" action="">
-      <h1>{{ section.settings.title }}</h1>
+      
 
       <!-- One "tab" for each step in the form: -->
       <!-- Step 1 -->
 
       <div id="PPCFirstStep" class="pcc-form__tab">
+        <h1>Find out more</h1>
         <h3>First, let’s check your address so we can confirm that you’re within our delivery area</h3>
+        <h3>If you already get a Ringtons delivery to your door, please <a href="https://www.ringtons.co.uk/get-in-touch-i99" target="_blank">click here</a>.</h3>
         <div class="pcc-form__input-container">
           <p class="pcc-form__input pcc-form__input--two-cols">
             <input id="PCCName" placeholder="First Name*" type="text" value="" onclick="this.className = ''">
@@ -38,7 +40,7 @@
           <input id="PCCLng" value="" hidden>
           <p class="pcc-form__input pcc-form__text-one-column--with-checkbox">
             <label class="pcc-form__checkbox-label"
-              >Want to keep up to date with our news and special offers? Just select the checkbox below. Don’t worry, we
+              >Want to keep up to date with our news and special offers? Just select the checkbox. Don’t worry, we
               won’t bombard you with emails!<br>
               <br>
 
@@ -60,7 +62,8 @@
 
       <!-- Step 2 -->
       <div id="PPCSecondStep" class="pcc-form__tab">
-        <h3>Great, we deliver in your area! To help us direct you to the right place, please can you tell us:</h3>
+        <h1>Great, we deliver in your area!</h1>
+        <h3>To help us direct you to the right place...</h3>
         <div class="pcc-form__input-container">
           <p class="pcc-form__input">
             <select
@@ -85,8 +88,9 @@
 
       <!-- Step 3 -->
       <div id="PPCThirdStep" class="pcc-form__tab">
+        <h1>Confirm your details</h1>
         <h3>
-          Fill in the form below and we’ll call you to give you more information, including the day we deliver in your
+          Confirm your address below and we’ll call you to give you more information, including the day we deliver in your
           area, our prices and to confirm whether you would like to book your first free personal delivery.
         </h3>
         <div class="pcc-form__input-container">
@@ -117,7 +121,8 @@
 
       <!-- Step 4 -->
       <div id="PPCFourthStep" class="pcc-form__tab">
-        <h3>Thank you for your details, we'll be in touch! Please specify what would you like from us next.</h3>
+        <h1>How can we help?</h1>
+        <h3>Thank you for your details. Please specify what you would like from us next, then we’ll be in touch!</h3>
         <p>
           Please note our delivery service is free, it's not a subscription service and there's no obligation to buy at
           any point.
@@ -134,7 +139,7 @@
           </p>
           <p class="pcc-form__input pcc-form__text-one-column--with-checkbox info-checkbox">
             <label class="pcc-form__checkbox-label"
-              >Days you deliver in my area
+              >Delivery days
               <input id="delivery-days" type="checkbox">
               <span class="pcc-form__checkmark"></span>
             </label>
