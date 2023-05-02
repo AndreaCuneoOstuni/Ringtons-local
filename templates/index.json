@@ -1,1 +1,167 @@
-{"sections":{"image-with-text":{"type":"image-with-text","blocks":{"9a8f4ef4-54ab-46de-b037-15548e0c2d1e":{"type":"pre-heading","settings":{"pre-heading":""}},"heading":{"type":"heading","settings":{"heading":"Tea and more to your door","heading_size":"h1"}},"a46e0c52-d716-406a-83ed-ed32bc6a8431":{"type":"subheading","settings":{"subheading":"EST. 1907"}},"text":{"type":"text","settings":{"text":"<p>Book a free personal delivery and join our communi-tea (sorry, we had to) of local Ringtons tea drinkers! <\/p><p>Fill out the form below and we’ll call you to let you know when we’re next in your area.<\/p>","text_style":"body"}}},"block_order":["9a8f4ef4-54ab-46de-b037-15548e0c2d1e","heading","a46e0c52-d716-406a-83ed-ed32bc6a8431","text"],"settings":{"image":"shopify:\/\/shop_images\/deliveryMan_81d1b7c0-2f0f-4474-b070-e23fb6a0486a.png","height":"adapt","desktop_image_width":"large","layout":"text_first","desktop_content_position":"middle","desktop_content_alignment":"left","content_layout":"overlap","color_scheme":"accent-2","mobile_content_alignment":"left","padding_top":0,"padding_bottom":0}},"multicolumn":{"type":"multicolumn","blocks":{"column-0":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Hamper_7c448076-1cfa-4442-b5a9-9a110673bb3f.png","title":"We’ll visit you","text":"<p>We’ll call you to let you know when we’re next in your area, and we’ll arrange your first free personal delivery. You’ll also receive a free packet of biscuits with your first order*!<\/p>","link_label":"","link":""}},"column-1":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Van_94ce1287-46a5-4a37-a601-3fef46d317e9.png","title":"Products you’ll love","text":"<p>No need to visit the shops. Come rain or shine, your local salesperson will bring you tea, biscuits and treats with a smile on a fortnightly or monthly basis. It’s free and there’s no obligation to buy.<\/p>","link_label":"","link":""}},"column-2":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/PaymentMethod.png","title":"No minimum spend","text":"<p>That's right - no minimum spend and no obligation to buy. We visit for free and accept contactless payments too. What's not to love?<\/p>","link_label":"","link":""}}},"block_order":["column-0","column-1","column-2"],"settings":{"title":"","heading_size":"h2","image_width":"third","image_ratio":"square","columns_desktop":3,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":0}},"908cebe4-2b89-485e-89a0-832209deac8e":{"type":"postcode-checker-form","settings":{"title":"Arrange your first visit"}},"b13aa33a-ed6a-42a8-a027-2e746f14f792":{"type":"rich-text","disabled":true,"blocks":{"template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-1":{"type":"text","settings":{"text":"<p>*T&Cs apply. Choose a free packet of biscuits from Ringtons core range, on your first Ringtons doorstep delivery, when you purchase tea or coffee. Ringtons reserves the right to amend or retract this offer. <\/p>"}},"template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-0":{"type":"heading","disabled":true,"settings":{"heading":"<p>Talk about your brand<\/p>","heading_size":"h1"}},"template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-2":{"type":"button","disabled":true,"settings":{"button_label":"Button label","button_link":"","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-1","template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-0","template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-2"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"background-1","full_width":true,"padding_top":0,"padding_bottom":52}}},"order":["image-with-text","multicolumn","908cebe4-2b89-485e-89a0-832209deac8e","b13aa33a-ed6a-42a8-a027-2e746f14f792"]}
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "9a8f4ef4-54ab-46de-b037-15548e0c2d1e": {
+          "type": "pre-heading",
+          "settings": {
+            "pre-heading": ""
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tea and more to your door",
+            "heading_size": "h1"
+          }
+        },
+        "a46e0c52-d716-406a-83ed-ed32bc6a8431": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "EST. 1907"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Book a free personal delivery and join our communi-tea (sorry, we had to) of local Ringtons tea drinkers! <\/p><p>Fill out the form below and we’ll call you to let you know when we’re next in your area.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "9a8f4ef4-54ab-46de-b037-15548e0c2d1e",
+        "heading",
+        "a46e0c52-d716-406a-83ed-ed32bc6a8431",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/deliveryMan_81d1b7c0-2f0f-4474-b070-e23fb6a0486a.png",
+        "height": "adapt",
+        "desktop_image_width": "large",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "accent-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hamper_7c448076-1cfa-4442-b5a9-9a110673bb3f.png",
+            "title": "We’ll visit you",
+            "text": "<p>We’ll call you from 0800 052 2440 to let you know when we’re next in your area, and we’ll arrange your first free personal delivery. You’ll also receive a free packet of biscuits with your first order*!<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Van_94ce1287-46a5-4a37-a601-3fef46d317e9.png",
+            "title": "Products you’ll love",
+            "text": "<p>No need to visit the shops. Come rain or shine, your local salesperson will bring you tea, biscuits and treats with a smile on a fortnightly or monthly basis. It’s free delivery and there’s no obligation to buy.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PaymentMethod.png",
+            "title": "No minimum spend",
+            "text": "<p>That's right - no minimum spend and no obligation to buy. We visit for free and accept contactless payments too. What's not to love?<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-0",
+        "column-1",
+        "column-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "908cebe4-2b89-485e-89a0-832209deac8e": {
+      "type": "postcode-checker-form",
+      "settings": {
+        "title": ""
+      }
+    },
+    "b13aa33a-ed6a-42a8-a027-2e746f14f792": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*T&Cs apply. Choose a free packet of biscuits from Ringtons core range, on your first Ringtons doorstep delivery, when you purchase tea or coffee. Ringtons reserves the right to amend or retract this offer. <\/p>"
+          }
+        },
+        "template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-1",
+        "template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-0",
+        "template--17171792494903__b13aa33a-ed6a-42a8-a027-2e746f14f792-167285858851c2693e-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "multicolumn",
+    "908cebe4-2b89-485e-89a0-832209deac8e",
+    "b13aa33a-ed6a-42a8-a027-2e746f14f792"
+  ]
+}
