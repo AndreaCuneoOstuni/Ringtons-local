@@ -84,7 +84,7 @@ p.pcc-form__input {
 /* Create a custom checkbox */
 .pcc-form__checkmark {
   position: absolute;
-  top: 0.7rem;
+  top: 0; /* 0.7rem */
   left: 0;
   height: 20px;
   width: 20px;

@@ -951,7 +951,6 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which tab to display
   let x = document.getElementsByClassName("pcc-form__tab");
-  let userPostcode = document.getElementById("formatted_address_4");
   let ID = x[currentTab].getAttribute("id");
   let clientStatusField = document.getElementById("PCCActiveClient");
 
@@ -963,7 +962,8 @@ function nextPrev(n) {
 
     sedDataLayerEvent(n, currentTab);
 
-    if (ID == 'PPCFirstStep' && userPostcode) {
+    if (ID == 'PPCFirstStep') {
+      console.log("PPCFirstStep");
       let lat = document.getElementById("PCCLat").value;
       let lng = document.getElementById("PCCLng").value;
       lookup(lat,lng);
@@ -1040,7 +1040,7 @@ function validateForm(ID) {
     let name = document.getElementById("PCCName");
     let lastname = document.getElementById("PCCLastName");
     let phone = document.getElementById("PCCNumber");
-    let address = document.getElementById("formatted_address_4");
+    let address = document.getElementById("formatted_address_0");
 
     // Empty the truthy/falsy array
     validValuesArr = [];
@@ -1178,12 +1178,12 @@ function validateForm(ID) {
   // Third Step
   if (ID == "PPCThirdStep") {
 
-    let address = document.getElementById("formatted_address_0");
+    let address = document.getElementById("line_1");
     let address1 = document.getElementById("formatted_address_1");
     let address2 = document.getElementById("formatted_address_2");
     let town = document.getElementById("town_or_city");
     let county = document.getElementById("county");
-    let postcode = document.getElementById("userPostcode");
+    let postcode = document.getElementById("postcode");
     let fullAddress = "";
 
     // Empty the truthy/falsy array
@@ -1222,7 +1222,7 @@ function validateForm(ID) {
         if (/\d/.test(validQ3)) {
           userData.postcode = postcode.value;
         } else {
-          userData.postcode = document.getElementById("postcode").value;
+          userData.postcode = document.getElementById("formatted_address_0").value;
         }
       }
     } else {
@@ -1260,6 +1260,9 @@ function validateForm(ID) {
     }
     if (document.getElementById("other").checked) {
       userData.request += "Other request. ";
+      if (document.getElementById("PCCRequestOther").value != "") {
+        userData.request += document.getElementById("PCCRequestOther").value;
+      }
     }
 
     // Empty the truthy/falsy array
@@ -1331,34 +1334,60 @@ function sendUserData(data, tabId) {
     .catch((error) => console.log("error", error));
 }
 
-
-/*
-  document.addEventListener("getaddress-find-address-selected", function (e) {
-    document.querySelector("#getaddress_dropdown").classList.add("hidden");
-    console.log(e.address);
-    let formatted_address = e.address.formatted_address;
-    let address = "";
-    for (line in formatted_address) {
-      if (formatted_address[line] != "") {
-        address += formatted_address[line] + ", ";
-      }
-    }
-
-    document.getElementById("PCCAddress").value = address.slice(0, -2);
-  });
- */
-
+// getaddress.io event listeners
 document.addEventListener("getaddress-autocomplete-address-selected", function (e) {
   console.log(e.address);
   let address = e.address;
-  document.querySelector("#PCCLat").value = address.latitude;
-  document.querySelector("#PCCLng").value = address.longitude;
-  document.querySelector("#formatted_address_0").value = address.line_1;
-  document.querySelector("#formatted_address_1").value = address.line_2;
-  document.querySelector("#formatted_address_2").value = address.line_3;
-  document.querySelector("#county").value = address.county;
-  document.querySelector("#userPostcode").value = address.postcode;
+  let county = address.county;
+  let town = address.town_or_city;
+  let displayedAddress = "";
+  let fullAddress = "";
+
+  document.getElementById("PCCLat").value = address.latitude;
+  document.getElementById("PCCLng").value = address.longitude;
+
+  if (address.line_1 != "") {
+    fullAddress += address.line_1;
+    document.getElementById("line_1").value = address.line_1;
+  } else {
+    document.getElementById("line_1").value = '';
+  }
+
+  if (address.line_2 != "") {
+    fullAddress += ", " + address.line_2;
+    displayedAddress += address.line_2;
+    document.getElementById("formatted_address_1").value = address.line_2;
+  } else {
+    document.getElementById("formatted_address_1").value = '';
+  }
+
+  if (address.line_3 != "") {
+    fullAddress += ", " + address.line_3;
+    document.getElementById("formatted_address_2").value = address.line_3;
+  } else {
+    document.getElementById("formatted_address_2").value = '-';
+  }
+
+  if (county == "") {
+    document.getElementById("county").value = town;
+    fullAddress += ", " + town;
+    displayedAddress += ", " + town;
+  } else {
+    document.getElementById("county").value = county;
+    fullAddress += ", " + town + ", " + county;
+    displayedAddress += ", " + town + ", " + county;
+  }
+
+  displayedAddress += ", " + address.postcode;
+
+  document.getElementById("auto-built-address").value = displayedAddress;
+  document.getElementById("postcode").value = address.postcode;
+
   foundPostcode = address.postcode;
+  userData.postcode = address.postcode;
+  userData.address = fullAddress;
+
+  console.log(userData);
 });
 
 document.addEventListener("getaddress-find-suggestions", function (e) {
@@ -1380,7 +1409,9 @@ document.addEventListener("getaddress-find-address-selected-failed", function (e
     console.log(e.message);
   }
 );
+// end of getaddress.io event listeners
 
+// 4th step hidden fields controls
 document.getElementById("PCCReferral").addEventListener("change", function (e) {
   let referralElem = document.getElementById("PCCReferral");
   let referralOtherElem = document.getElementById("PCCReferralOther");
@@ -1390,6 +1421,17 @@ document.getElementById("PCCReferral").addEventListener("change", function (e) {
     referralOtherElem.parentElement.classList.add("hidden");
   }
 });
+
+document.getElementById("other").addEventListener("change", function (e) {
+  let requestElem = document.getElementById("other");
+  let requestOtherElem = document.getElementById("PCCRequestOther");
+  if (requestElem.checked) {
+    requestOtherElem.parentElement.classList.remove("hidden");
+  } else {
+    requestOtherElem.parentElement.classList.add("hidden");
+  }
+});
+// end of 4th step hidden fields controls
 
 
 function fixStepIndicator(n) {
