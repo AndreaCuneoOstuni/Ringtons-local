@@ -1253,7 +1253,7 @@ function validateForm(ID) {
       userData.request += "Price List. ";
     }
     if (document.getElementById("delivery-days").checked) {
-      userData.request += "Delivery Days. ";
+      userData.request += "Deliver Days. ";
     }
     if (document.getElementById("arrange-visit").checked) {
       userData.request += "Arrange a visit. ";
