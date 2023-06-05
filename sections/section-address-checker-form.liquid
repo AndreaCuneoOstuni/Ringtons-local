@@ -1,10 +1,10 @@
-{{ 'component-postcode-checker-form.css' | asset_url | stylesheet_tag }}
+{{ 'component-address-checker-form-styles.css' | asset_url | stylesheet_tag }}
 <script src="https://cdn.getaddress.io/scripts/getaddress-find-2.0.0.min.js"></script>
 <script src="https://cdn.getaddress.io/scripts/getaddress-autocomplete-1.1.3.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!-- include the Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASbWYGE0CbWyJwJ4mb9wtMnGDoeHJ82BE&libraries=geometry"></script>
-<script src="{{ 'postcode-checker-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'component-address-checker-form-functionality.js' | asset_url }}" defer="defer"></script>
 
 <div class="pcc-form center {% if section.settings.full_width == false %}pcc-form--narrow page-width{% endif %}">
   <div class="pcc-form__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding page-width">
@@ -245,7 +245,7 @@
 
 {% schema %}
 {
-  "name": "Postcode Checker Form",
+  "name": "Address Checker Form",
   "settings": [
     {
       "type": "text",
@@ -255,7 +255,7 @@
   ],
   "presets": [
     {
-      "name": "Postcode Checker Form"
+      "name": "Address Checker Form"
     }
   ]
 }

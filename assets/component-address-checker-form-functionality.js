@@ -1,5 +1,7 @@
+const submitButton = document.getElementById("nextBtn");
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
+
 let foundPostcode = "";
 const userData = {
   email: "",
@@ -19,7 +21,7 @@ let recaptchaRes = "";
 function callback(res) {
   const submitButton = document.getElementById("nextBtn");
   recaptchaRes = res;
-  submitButton.removeAttribute("disabled");
+  submitButton.disabled = false;
 }
 
 function expiredCallback(){
@@ -28,9 +30,9 @@ function expiredCallback(){
   let btnText = submitButton.innerText;
 
   if(btnText == 'Submit'){
-    submitButton.setAttribute("disabled", "disabled");
+    submitButton.disabled = true;
   } else {
-    submitButton.removeAttribute("disabled");
+    submitButton.disabled = false;
   }
 }
 
@@ -656,7 +658,6 @@ const polygons = [
     name: "Hull",
     polygon: new google.maps.Polygon({
       paths: [
-
         { lng: -0.9291068, lat: 53.6958614 },
         { lng: -0.9016413, lat: 53.6942352 },
         { lng: -0.8776089, lat: 53.6901694 },
@@ -840,7 +841,6 @@ const polygons = [
     name: "Leicester",
     polygon: new google.maps.Polygon({
       paths: [
-
         { lng: -1.610142, lat: 52.8192033 },
         { lng: -1.6142617, lat: 52.8389088 },
         { lng: -1.6451595, lat: 52.8374571 },
@@ -1078,7 +1078,6 @@ const polygons = [
     name: "South-Tyne",
     polygon: new google.maps.Polygon({
       paths: [
-
         { lng: -1.3134955, lat: 54.8200345 },
         { lng: -1.3525742, lat: 54.883626 },
         { lng: -1.3553208, lat: 54.8958687 },
@@ -1303,7 +1302,6 @@ const polygons = [
     name: "Stoke",
     polygon: new google.maps.Polygon({
       paths: [
-
         { lng: -1.8126543, lat: 52.905749 },
         { lng: -1.9328173, lat: 52.9512799 },
         { lng: -1.9685228, lat: 53.0694362 },
@@ -1349,7 +1347,6 @@ const polygons = [
     name: "Teesside",
     polygon: new google.maps.Polygon({
       paths: [
-
         { lng: -1.5281206, lat: 54.7953416 },
         { lng: -1.5328699, lat: 54.7850444 },
         { lng: -1.5324684, lat: 54.7797954 },
@@ -1431,8 +1428,6 @@ const polygons = [
     name: "Tockwith",
     polygon: new google.maps.Polygon({
       paths: [
-
-
         { lng: -1.4156256, lat: 54.429632 },
         { lng: -1.442578, lat: 54.4107654 },
         { lng: -1.4837924, lat: 54.4048625 },
@@ -1535,7 +1530,9 @@ const lookup = async (lat, lng) => {
         console.log(`Found in ${poly.name} region`);
         // TEMP
         document.getElementById("PostcodeChecker").style.visibility = 'visible';
-        //document.getElementById("postcode").value = userPostcode;
+        console.log("Raw Data", userData);
+        //sending current data to raw data tab
+        sendUserData(userData, "Raw_data");
         return false;
     }
   }
@@ -1550,6 +1547,7 @@ const lookup = async (lat, lng) => {
 };
 
 function showTab(n) {
+  submitButton.disabled = false;
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("pcc-form__tab");
   x[n].style.display = "block";
@@ -1593,6 +1591,7 @@ function showTab(n) {
 
 function nextPrev(n) {
   // This function will figure out which tab to display
+  submitButton.disabled = true;
   let x = document.getElementsByClassName("pcc-form__tab");
   let ID = x[currentTab].getAttribute("id");
   let clientStatusField = document.getElementById("PCCActiveClient");
@@ -1622,9 +1621,6 @@ function nextPrev(n) {
         //document.getElementById("PostcodeChecker").submit();
       }
     }
-    console.log("Raw Data", userData);
-    //sending current data to raw data tab
-    sendUserData(userData, "Raw_data");
   }
 
   if(n == -1){
@@ -1783,6 +1779,7 @@ function validateForm(ID) {
 
     if (validValuesArr.indexOf("0") >= 0) {
       valid = false;
+      submitButton.disabled = false;
     }
     optInResponse = document.getElementById("PCCOptIn").checked;
     if (optInResponse) {
@@ -1825,6 +1822,8 @@ function validateForm(ID) {
 
     if (valid) {
       document.getElementsByClassName("pcc-form__step")[currentTab].className += " finish";
+    } else {
+      submitButton.disabled = false;
     }
 
     return {
@@ -1890,6 +1889,7 @@ function validateForm(ID) {
 
     if (validValuesArr.indexOf("0") >= 0) {
       valid = false;
+      submitButton.disabled = false;
     }
 
     if (valid) {
@@ -1948,6 +1948,7 @@ function validateForm(ID) {
 
     if (validValuesArr.indexOf("0") >= 0) {
       valid = false;
+      submitButton.disabled = false;
     }
 
     if (valid) {
