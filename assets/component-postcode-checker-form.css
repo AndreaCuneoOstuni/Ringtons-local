@@ -24,6 +24,12 @@
   align-content: center;
 }
 
+/* form links */
+#PostcodeChecker a {
+  color: #CEBE7B;
+}
+/* end of form links */
+
 p.pcc-form__input {
   width: 100%;
   margin: 1rem 0;
@@ -78,7 +84,7 @@ p.pcc-form__input {
 /* Create a custom checkbox */
 .pcc-form__checkmark {
   position: absolute;
-  top: 0.7rem;
+  top: 0; /* 0.7rem */
   left: 0;
   height: 20px;
   width: 20px;
@@ -240,6 +246,13 @@ p.pcc-form__input {
   margin-top: 2rem;
 }
 
+/* ReCaptcha label */
+p.pcc-form__input__recaptcha {
+  text-align: left;
+  font-size: 13px;
+  color: #303030;
+}
+
 /* Ideas Postcode checker */
 
 .pcc-form__postcode-lookup {
@@ -305,6 +318,11 @@ select#getaddress_dropdown {
 
 #getaddress_button:not(:disabled), [type=button]:not(:disabled) {
   cursor: pointer;
+}
+
+.pcc-form__button-container button[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
 #getaddress_button>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
